@@ -22,6 +22,10 @@ class TambahDataPeramalan extends React.Component {
     this.setState({ show: true });
   };
 
+  tutup = () => {
+    this.setState({ show: false });
+  };
+
   render() {
     const { id } = this.props;
     return (
@@ -30,13 +34,13 @@ class TambahDataPeramalan extends React.Component {
           Hapus Data
         </Button>
 
-        <Modal show={this.state.show} onHide={this.handleClose}>
+        <Modal show={this.state.show} onHide={this.tutup}>
           <Modal.Header closeButton>
             <Modal.Title>Hapus Data</Modal.Title>
           </Modal.Header>
           <Modal.Body>ID: {id}</Modal.Body>
           <Modal.Footer>
-            <Button variant="secondary" onClick={this.handleClose}>
+            <Button variant="secondary" onClick={this.tutup}>
               Batal
             </Button>
             <Button variant="primary" onClick={this.handleClose}>

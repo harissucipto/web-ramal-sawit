@@ -1,9 +1,9 @@
 import React from 'react';
 import Modal from 'react-bootstrap/Modal';
 import Button from 'react-bootstrap/Button';
-import InputGroup from 'react-bootstrap/InputGroup';
-import FormControl from 'react-bootstrap/FormControl';
 import Alert from 'react-bootstrap/Alert';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
 
 class TambahDataPeramalan extends React.Component {
   state = {
@@ -53,6 +53,11 @@ class TambahDataPeramalan extends React.Component {
     this.props.onEdit(newData);
   };
 
+  saveState = event => {
+    console.log(event.target);
+    this.setState({ [event.target.name]: event.target.value });
+  };
+
   render() {
     return (
       <>
@@ -75,58 +80,61 @@ class TambahDataPeramalan extends React.Component {
               </Alert>
             )}
 
-            <InputGroup
-              className="mb-3"
-              defaultValue={this.state.y}
-              onChange={event => this.setState({ y: event.target.value })}
-            >
-              <InputGroup.Prepend>
-                <InputGroup.Text id="basic-addon3">Produksi</InputGroup.Text>
-              </InputGroup.Prepend>
-              <FormControl id="basic-url" aria-describedby="basic-addon3" />
-            </InputGroup>
-
-            <InputGroup
-              className="mb-3"
-              onChange={event => this.setState({ x1: event.target.value })}
-            >
-              <InputGroup.Prepend>
-                <InputGroup.Text id="basic-addon3">Pupuk</InputGroup.Text>
-              </InputGroup.Prepend>
-              <FormControl id="basic-url" aria-describedby="basic-addon3" />
-            </InputGroup>
-
-            <InputGroup
-              className="mb-3"
-              onChange={event => this.setState({ x2: event.target.value })}
-            >
-              <InputGroup.Prepend>
-                <InputGroup.Text id="basic-addon3">Curah Hujan</InputGroup.Text>
-              </InputGroup.Prepend>
-              <FormControl id="basic-url" aria-describedby="basic-addon3" />
-            </InputGroup>
-
-            <InputGroup
-              className="mb-3"
-              onChange={event => this.setState({ x3: event.target.value })}
-            >
-              <InputGroup.Prepend>
-                <InputGroup.Text id="basic-addon3">Jarak Tanam</InputGroup.Text>
-              </InputGroup.Prepend>
-              <FormControl id="basic-url" aria-describedby="basic-addon3" />
-            </InputGroup>
-
-            <InputGroup
-              className="mb-3"
-              onChange={event => this.setState({ x4: event.target.value })}
-            >
-              <InputGroup.Prepend>
-                <InputGroup.Text id="basic-addon3">
-                  Ketinggian Tempat
-                </InputGroup.Text>
-              </InputGroup.Prepend>
-              <FormControl id="basic-url" aria-describedby="basic-addon3" />
-            </InputGroup>
+            <Row>
+              <Col xs="3">Produksi</Col>
+              <Col xs="9">
+                <label name="y">
+                  <input
+                    value={this.state.y}
+                    onChange={e => this.setState({ y: e.target.value })}
+                  />
+                </label>
+              </Col>
+            </Row>
+            <Row>
+              <Col xs="3">Pupuk</Col>
+              <Col xs="9">
+                <label name="x1">
+                  <input
+                    value={this.state.x1}
+                    onChange={e => this.setState({ x1: e.target.value })}
+                  />
+                </label>
+              </Col>
+            </Row>
+            <Row>
+              <Col xs="3">Curah Hujan</Col>
+              <Col xs="9">
+                <label name="x2">
+                  <input
+                    value={this.state.x1}
+                    onChange={e => this.setState({ x2: e.target.value })}
+                  />
+                </label>
+              </Col>
+            </Row>
+            <Row>
+              <Col xs="3">Jarak Tanam</Col>
+              <Col xs="9">
+                <label name="x3">
+                  <input
+                    value={this.state.x3}
+                    onChange={e => this.setState({ x3: e.target.value })}
+                  />
+                </label>
+              </Col>
+            </Row>
+            <Row>
+              <Col xs="3">Ketinggian Tempat</Col>
+              <Col xs="9">
+                <label name="x4">
+                  <input
+                    value={this.state.x4}
+                    onChange={e => this.setState({ x4: e.target.value })}
+                  />
+                </label>
+              </Col>
+            </Row>
           </Modal.Body>
           <Modal.Footer>
             <Button variant="secondary" onClick={this.handleClose}>
