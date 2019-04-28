@@ -20,7 +20,7 @@ const TableDataPeramalan = ({ data = [] }) => (
       {data.map((item, i) => (
         <tr key={i}>
           <td>{i + 1}</td>
-
+          <td>{item.tanggal.format('MM YYYY')}</td>
           <td>{item.y}</td>
           <td>{item.x1}</td>
           <td>{item.x2}</td>
