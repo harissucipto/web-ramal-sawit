@@ -1,8 +1,9 @@
 import React from 'react';
 import Table from 'react-bootstrap/Table';
 import Hapus from './HapusDataPeramalan';
+import Edit from './EditDataPeramalan';
 
-const TableDataPeramalan = ({ data = [], onHapus }) => (
+const TableDataPeramalan = ({ data = [], onHapus, onEdit }) => (
   <Table>
     <thead>
       <tr>
@@ -30,7 +31,7 @@ const TableDataPeramalan = ({ data = [], onHapus }) => (
           <th>
             <Hapus onHapus={onHapus} id={item.id} />
 
-            <button>Edit</button>
+            <Edit onEdit={onEdit} item={item} />
           </th>
         </tr>
       ))}

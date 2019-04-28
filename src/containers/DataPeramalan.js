@@ -37,6 +37,13 @@ class DataPeramalan extends Container {
       data: this.state.data.filter(item => item.id !== id)
     });
   };
+
+  editData = newData => {
+    const data = this.state.data.filter(item => item.id !== newData.id);
+    this.setState({
+      data: [...data, newData]
+    });
+  };
 }
 
 export default DataPeramalan;

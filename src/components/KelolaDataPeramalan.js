@@ -5,11 +5,15 @@ import TambahData from './TambahDataPeramalan';
 
 export default class KelolaDataPeramalan extends Component {
   render() {
-    const { state, tambahData, hapusData } = this.props;
+    const { state, tambahData, hapusData, editData } = this.props;
     return (
       <div>
         <TambahData onTambah={tambahData} />
-        <TableDataPeramalan data={state.data} onHapus={hapusData} />
+        <TableDataPeramalan
+          data={state.data}
+          onHapus={hapusData}
+          onEdit={editData}
+        />
       </div>
     );
   }
