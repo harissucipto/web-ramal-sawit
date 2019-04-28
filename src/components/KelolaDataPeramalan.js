@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+
 import TableDataPeramalan from './TableDataPeramalan';
 
 export default class KelolaDataPeramalan extends Component {

@@ -12,6 +12,7 @@ const TableDataPeramalan = ({ data = [] }) => (
         <th>Curah Hujan</th>
         <th>Jarak Tanam</th>
         <th>Ketinggian Tempat</th>
+        <th>Aksi</th>
       </tr>
     </thead>
 
@@ -25,6 +26,11 @@ const TableDataPeramalan = ({ data = [] }) => (
           <td>{item.x2}</td>
           <td>{item.x3}</td>
           <td>{item.x4}</td>
+          <th>
+            <button>Hapus</button>
+            <button>Edit</button>
+            <button>Delete</button>
+          </th>
         </tr>
       ))}
     </tbody>

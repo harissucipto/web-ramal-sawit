@@ -11,7 +11,6 @@ class DataPeramalan extends Container {
 
   fetch = () => {
     const { x1, x2, x3, x4, y } = Data;
-    console.log(Data, 'ini data');
     const data = x1.map((item, i) => ({
       id: shortid(),
       tanggal: moment(),
