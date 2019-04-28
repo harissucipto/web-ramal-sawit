@@ -1,16 +1,14 @@
 import React, { Component } from 'react';
 
 import TableDataPeramalan from './TableDataPeramalan';
+import TambahData from './TambahDataPeramalan';
 
 export default class KelolaDataPeramalan extends Component {
-  componentDidMount() {
-    this.props.fetch();
-  }
-
   render() {
-    const { state } = this.props;
+    const { state, tambahData } = this.props;
     return (
       <div>
+        <TambahData onTambah={tambahData} />
         <TableDataPeramalan data={state.data} />
       </div>
     );

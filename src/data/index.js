@@ -1,3 +1,6 @@
+import shortid from 'shortid';
+import moment from 'moment';
+
 // data
 const x1 = [101, 241, 65, 39, 71, 46, 52, 65, 111, 83, 52, 19];
 const x2 = [
@@ -30,5 +33,15 @@ const y = [
   1531390,
   2142730
 ];
+
+export const data = x1.map((item, i) => ({
+  id: shortid(),
+  tanggal: moment(),
+  x1: x1[i],
+  x2: x2[i],
+  x3: x3[i],
+  x4: x4[i],
+  y: y[i]
+}));
 
 export default { x1, x2, x3, x4, y };
