@@ -29,8 +29,8 @@ const TableDataPeramalan = ({ data = [], onHapus }) => (
           <td>{item.x4}</td>
           <th>
             <Hapus onHapus={onHapus} id={item.id} />
+
             <button>Edit</button>
-            <button>Delete</button>
           </th>
         </tr>
       ))}
