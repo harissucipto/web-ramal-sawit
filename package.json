@@ -3,9 +3,17 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "bootstrap": "^4.3.1",
+    "ml-regression": "^4.4.2",
+    "ml-regression-multivariate-linear": "^1.2.0",
+    "moment": "^2.24.0",
     "react": "^16.8.6",
+    "react-bootstrap": "^1.0.0-beta.8",
+    "react-d3": "^0.4.0",
     "react-dom": "^16.8.6",
-    "react-scripts": "3.0.0"
+    "react-router-dom": "^5.0.0",
+    "react-scripts": "3.0.0",
+    "unstated": "^2.1.1"
   },
   "scripts": {
     "start": "react-scripts start",

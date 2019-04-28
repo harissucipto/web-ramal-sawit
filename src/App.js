@@ -1,26 +1,21 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { Provider } from 'unstated';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+import * as ROUTES from './constants/routes';
+import Layout from './components/Layout';
+import HomePage from './containers/HomePage';
+import AkunPage from './containers/AkunPage';
+
+const App = () => (
+  <Provider>
+    <Router>
+      <Layout>
+        <Route exact path={ROUTES.DASHBOARD} component={HomePage} />
+        <Route path={ROUTES.ADMIN} component={AkunPage} />
+      </Layout>
+    </Router>
+  </Provider>
+);
 
 export default App;
