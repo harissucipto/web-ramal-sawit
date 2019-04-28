@@ -30,6 +30,13 @@ class DataPeramalan extends Container {
       data: [...this.state.data, baru]
     });
   };
+
+  hapusData = id => {
+    console.log(id, 'ini id');
+    this.setState({
+      data: this.state.data.filter(item => item.id !== id)
+    });
+  };
 }
 
 export default DataPeramalan;

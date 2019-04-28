@@ -1,7 +1,8 @@
 import React from 'react';
 import Table from 'react-bootstrap/Table';
+import Hapus from './HapusDataPeramalan';
 
-const TableDataPeramalan = ({ data = [] }) => (
+const TableDataPeramalan = ({ data = [], onHapus }) => (
   <Table>
     <thead>
       <tr>
@@ -27,7 +28,7 @@ const TableDataPeramalan = ({ data = [] }) => (
           <td>{item.x3}</td>
           <td>{item.x4}</td>
           <th>
-            <button>Hapus</button>
+            <Hapus onHapus={onHapus} id={item.id} />
             <button>Edit</button>
             <button>Delete</button>
           </th>

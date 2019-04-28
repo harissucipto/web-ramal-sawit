@@ -6,15 +6,16 @@ import FormControl from 'react-bootstrap/FormControl';
 import Alert from 'react-bootstrap/Alert';
 import moment from 'moment';
 import shortid from 'shortid';
+import { isNumber } from 'util';
 
 class TambahDataPeramalan extends React.Component {
   state = {
     show: false,
-    x1: 0,
-    x2: 0,
-    x3: 0,
-    x4: 0,
-    y: 0,
+    x1: '',
+    x2: '',
+    x3: '',
+    x4: '',
+    y: '',
     error: ''
   };
 
@@ -22,6 +23,21 @@ class TambahDataPeramalan extends React.Component {
     this.tambahBaru();
     this.setState({ show: false });
   };
+
+  // checkInput = () => {
+  //   const { x1, x2, x3, x4, y } = this.state;
+  //   const data = [x1, x2, x3, x4, y];
+  //   console.log(isNumber(x1[0]));
+
+  //   const error = data.some(item => !isNumber(item));
+  //   console.log(error, 'ini');
+  //   if (error) {
+  //     this.setState({ error: 'Error inputanmu ada salah' });
+  //     return false;
+  //   }
+
+  //   return true;
+  // };
 
   tambahBaru = () => {
     const { x1, x2, x3, x4, y } = this.state;
