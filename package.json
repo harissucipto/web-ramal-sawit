@@ -4,8 +4,7 @@
   "private": true,
   "dependencies": {
     "bootstrap": "^4.3.1",
-    "ml-regression": "^4.4.2",
-    "ml-regression-multivariate-linear": "^1.2.0",
+    "mathjs": "^5.9.0",
     "moment": "^2.24.0",
     "react": "^16.8.6",
     "react-bootstrap": "^1.0.0-beta.8",

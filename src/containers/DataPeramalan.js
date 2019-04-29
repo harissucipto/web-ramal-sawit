@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 import { Container } from 'unstated';
 import shortid from 'shortid';
 import Data, { data } from '../data';
@@ -6,7 +7,8 @@ import moment from 'moment';
 class DataPeramalan extends Container {
   state = {
     data,
-    loading: false
+    loading: false,
+    model: null
   };
 
   fetch = () => {
@@ -43,6 +45,20 @@ class DataPeramalan extends Container {
     this.setState({
       data: [...data, newData]
     });
+  };
+
+  modelData = () => {
+    let dataX = this.state.data.map(item => [
+      item.x1,
+      item.x2,
+      item.x3,
+      item.x4
+    ]);
+    let dataY = this.state.data.map(item => [item.y]);
+
+    let model = new ML.MultivariateLinearRegression(dataX, dataY);
+
+    console.log(model);
   };
 }
 

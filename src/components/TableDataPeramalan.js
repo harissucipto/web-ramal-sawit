@@ -4,7 +4,7 @@ import Hapus from './HapusDataPeramalan';
 import Edit from './EditDataPeramalan';
 
 const TableDataPeramalan = ({ data = [], onHapus, onEdit }) => (
-  <Table>
+  <Table bordered>
     <thead>
       <tr>
         <th>No</th>

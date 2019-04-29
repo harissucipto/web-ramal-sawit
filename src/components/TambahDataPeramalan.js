@@ -48,11 +48,11 @@ class TambahDataPeramalan extends React.Component {
     const newData = {
       id: shortid(),
       tanggal: moment(),
-      x1,
-      x2,
-      x3,
-      x4,
-      y
+      x1: Number(x1),
+      x2: Number(x2),
+      x3: Number(x3),
+      x4: Number(x4),
+      y: Number(y)
     };
 
     console.log(newData, 'new Data');
