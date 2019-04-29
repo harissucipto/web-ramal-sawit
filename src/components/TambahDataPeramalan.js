@@ -24,6 +24,10 @@ class TambahDataPeramalan extends React.Component {
     this.setState({ show: false });
   };
 
+  tutup = () => {
+    this.setState({ show: false });
+  };
+
   // checkInput = () => {
   //   const { x1, x2, x3, x4, y } = this.state;
   //   const data = [x1, x2, x3, x4, y];
@@ -67,7 +71,7 @@ class TambahDataPeramalan extends React.Component {
           Tambah Data
         </Button>
 
-        <Modal show={this.state.show} onHide={this.handleClose} size="lg">
+        <Modal show={this.state.show} onHide={this.tutup} size="lg">
           <Modal.Header closeButton>
             <Modal.Title>Tambah Data Training</Modal.Title>
           </Modal.Header>

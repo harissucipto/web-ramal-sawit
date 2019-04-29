@@ -38,6 +38,10 @@ class TambahDataPeramalan extends React.Component {
     this.setState({ show: true });
   };
 
+  tutup = () => {
+    this.setState({ show: false });
+  };
+
   editData = () => {
     const { x1, x2, x3, x4, y, id, tanggal } = this.state;
     const newData = {
@@ -59,13 +63,14 @@ class TambahDataPeramalan extends React.Component {
   };
 
   render() {
+    console.log(this.props.item, 'ini edit data');
     return (
       <>
         <Button variant="warning" onClick={this.handleShow}>
           Edit Data
         </Button>
 
-        <Modal show={this.state.show} onHide={this.handleClose}>
+        <Modal show={this.state.show} onHide={this.tutup}>
           <Modal.Header closeButton>
             <Modal.Title>Edit Data Training {this.state.id} </Modal.Title>
           </Modal.Header>

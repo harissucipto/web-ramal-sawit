@@ -20,9 +20,9 @@ const TableDataPeramalan = ({ data = [], onHapus, onEdit }) => (
 
     <tbody>
       {data.map((item, i) => (
-        <tr key={i}>
+        <tr key={item.id}>
           <td>{i + 1}</td>
-          <td>{item.tanggal.format('MM YYYY')}</td>
+          <td>{item.id}</td>
           <td>{item.y}</td>
           <td>{item.x1}</td>
           <td>{item.x2}</td>
