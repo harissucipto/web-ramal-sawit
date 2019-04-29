@@ -8,7 +8,7 @@ export default class DataPeramalanPage extends Component {
   render() {
     return (
       <div>
-        <p>ini data peramalan</p>
+        <h2 className="text-center">Training Data Peramalan</h2>
         <Subscribe to={[DataPeramalan]}>
           {data => <KelolaDataPeramalan {...data} />}
         </Subscribe>

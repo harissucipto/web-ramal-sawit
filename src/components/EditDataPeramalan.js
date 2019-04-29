@@ -142,7 +142,7 @@ class TambahDataPeramalan extends React.Component {
             </Row>
           </Modal.Body>
           <Modal.Footer>
-            <Button variant="secondary" onClick={this.handleClose}>
+            <Button variant="secondary" onClick={this.tutup}>
               Batal
             </Button>
             <Button variant="primary" onClick={this.handleClose}>
