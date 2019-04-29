@@ -1,6 +1,5 @@
 import shortid from 'shortid';
 import moment from 'moment';
-import { MultivariateLinearRegression } from 'ml-regression';
 
 // data
 const x1 = [101, 241, 65, 39, 71, 46, 52, 65, 111, 83, 52, 19];

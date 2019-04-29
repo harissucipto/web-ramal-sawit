@@ -57,8 +57,7 @@ class DataPeramalan extends Container {
     let dataY = this.state.data.map(item => [item.y]);
 
     let model = new ML.MultivariateLinearRegression(dataX, dataY);
-
-    console.log(model);
+    this.setState({ model });
   };
 }
 

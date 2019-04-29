@@ -9,6 +9,7 @@ import Layout from './components/Layout';
 import HomePage from './containers/HomePage';
 import AdminPage from './containers/AdminPage';
 import DataPeramalanPage from './containers/DataPeramalanPage';
+import HitungPeramalanPage from './containers/HitungPeramalanPage';
 
 const App = () => {
   let dataPeramalan = new DataPeramalan();
@@ -20,6 +21,7 @@ const App = () => {
           <Route exact path={ROUTES.DASHBOARD} component={HomePage} />
           <Route path={ROUTES.ADMIN} component={AdminPage} />
           <Route path={ROUTES.DATA} component={DataPeramalanPage} />
+          <Route path={ROUTES.HITUNG} component={HitungPeramalanPage} />
         </Layout>
       </Router>
     </Provider>

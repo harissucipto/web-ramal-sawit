@@ -6,7 +6,6 @@ import FormControl from 'react-bootstrap/FormControl';
 import Alert from 'react-bootstrap/Alert';
 import moment from 'moment';
 import shortid from 'shortid';
-import { isNumber } from 'util';
 
 class TambahDataPeramalan extends React.Component {
   state = {

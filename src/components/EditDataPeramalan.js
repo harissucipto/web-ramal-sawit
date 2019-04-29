@@ -63,7 +63,6 @@ class TambahDataPeramalan extends React.Component {
   };
 
   render() {
-    console.log(this.props.item, 'ini edit data');
     return (
       <>
         <Button variant="warning" onClick={this.handleShow}>

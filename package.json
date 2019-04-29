@@ -13,6 +13,7 @@
     "react-router-dom": "^5.0.0",
     "react-scripts": "3.0.0",
     "shortid": "^2.2.14",
+    "styled-components": "^4.2.0",
     "unstated": "^2.1.1"
   },
   "scripts": {

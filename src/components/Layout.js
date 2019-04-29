@@ -10,7 +10,7 @@ const Layout = ({ children }) => (
   <>
     <Header />
     <Container fluid>
-      <Row>
+      <Row style={{ marginTop: '40px' }}>
         <Col lg="3">
           <Navigation />
         </Col>
