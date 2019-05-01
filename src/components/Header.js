@@ -47,7 +47,7 @@ const Header = ({ location, history }) => {
             active={pathname === ROUTES.PERAMALAN}
             onClick={() => history.push(ROUTES.PERAMALAN)}
           >
-            Peramalan
+            Peramalan Produksi
           </Nav.Link>
           <Nav.Link
             active={pathname === ROUTES.PETUNJUK}
