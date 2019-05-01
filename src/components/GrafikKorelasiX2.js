@@ -1,7 +1,7 @@
 import React from 'react';
 import { Pie } from 'react-chartjs-2';
 import * as NAMA from '../constants/namaData';
-import { toPersen } from '../utils/hitung';
+import { toPersen, kosongPersen } from '../utils/hitung';
 import math from 'mathjs';
 
 const GrafikData = ({ data = [], korelasi, cari = '' }) => {
@@ -11,23 +11,25 @@ const GrafikData = ({ data = [], korelasi, cari = '' }) => {
   const x4 = data.map(item => item.x4);
   const y = data.map(item => item.y);
 
-  const x1x2 = math.round(korelasi(x1, x2), 4);
-  const x1x3 = math.round(korelasi(x1, x3), 4);
-  const x1x4 = math.round(korelasi(x1, x4), 4);
-  const x1y = math.round(korelasi(x1, y), 4);
+  const x2x1 = math.round(korelasi(x2, x1), 4);
+  const x2x3 = math.round(korelasi(x2, x3), 4);
+  const x2x4 = math.round(korelasi(x2, x4), 4);
+  const x2y = math.round(korelasi(x2, y), 4);
+
+  console.log(kosongPersen([x2x1, x2x3, x2x4, x2y]), 'ini');
 
   const filterData = {
     labels: [
-      `${NAMA.textX[1]}: ${x1x2}`,
-      `${NAMA.textX[2]}: ${x1x3}`,
-      `${NAMA.textX[3]}: ${x1x4}`,
-      `Produksi: ${x1y}`
+      `${NAMA.textX[0]}: ${x2x1}`,
+      `${NAMA.textX[2]}: ${x2x3}`,
+      `${NAMA.textX[3]}: ${x2x4}`,
+      `Produksi: ${x2y}`
     ],
     datasets: [
       {
-        data: [toPersen(x1x2), toPersen(x1x3), toPersen(x1x4), toPersen(x1y)],
+        data: [toPersen(x2x1), toPersen(x2x3), toPersen(x2x4), toPersen(x2y)],
         backgroundColor: [
-          NAMA.warna[1],
+          NAMA.warna[0],
           NAMA.warna[2],
           NAMA.warna[3],
           NAMA.warna[4]

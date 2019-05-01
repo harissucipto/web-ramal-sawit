@@ -10,4 +10,9 @@ export const arrPangkatDua = arr => arr.map(pangkat2);
 export const arrKaliArr = (arr1, arr2) =>
   arr1.map((item, i) => kali(arr1[i], arr2[i]));
 
-export const toPersen = num => math.abs(math.round(num) * 100);
+export const toPersen = num =>
+  math.isNegative(num) ? 0 : math.round(num * 100);
+
+export const kosongPersen = arr => {
+  return arr.every(item => !math.isNegative(item)) ? 0 : 100;
+};
