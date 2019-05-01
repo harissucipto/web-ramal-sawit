@@ -11,6 +11,6 @@ export const warna = [
   '#736F4E',
   '#3B3923',
   '#8DDCA4',
-  'goldenrod'
+  'yellow'
 ];
 export const y = 'produksi';

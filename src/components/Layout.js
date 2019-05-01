@@ -14,7 +14,7 @@ const Layout = ({ children }) => (
         <Col lg="3">
           <Navigation />
         </Col>
-        <Col>{children}</Col>
+        <Col lg="7">{children}</Col>
       </Row>
     </Container>
   </>

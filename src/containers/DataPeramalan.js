@@ -1,8 +1,9 @@
-/* eslint-disable no-undef */
 import { Container } from 'unstated';
 import shortid from 'shortid';
 import Data, { data } from '../data';
 import moment from 'moment';
+import math from 'mathjs';
+import { totalArr, arrPangkatDua, arrKaliArr } from '../utils/hitung';
 
 class DataPeramalan extends Container {
   state = {
@@ -56,8 +57,25 @@ class DataPeramalan extends Container {
     ]);
     let dataY = this.state.data.map(item => [item.y]);
 
+    // eslint-disable-next-line no-undef
     let model = new ML.MultivariateLinearRegression(dataX, dataY);
     this.setState({ model });
+  };
+
+  koefesienKorelasiAB = (A, B) => {
+    const n = B.length;
+    const EBA = totalArr(arrKaliArr(B, A));
+    const EB = totalArr(B);
+    const EA = totalArr(A);
+    const EBKuadrat = totalArr(arrPangkatDua(B));
+    const EAKuadrat = totalArr(arrPangkatDua(A));
+
+    const atas = n * EBA - EB * EA;
+    const bawah = math.sqrt(
+      (n * EBKuadrat - math.pow(EB, 2)) * (n * EAKuadrat - math.pow(EA, 2))
+    );
+
+    return atas / bawah;
   };
 }
 
