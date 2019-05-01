@@ -9,7 +9,8 @@ class DataPeramalan extends Container {
   state = {
     data,
     loading: false,
-    model: null
+    model: null,
+    r2: null
   };
 
   fetch = () => {
@@ -60,6 +61,7 @@ class DataPeramalan extends Container {
     // eslint-disable-next-line no-undef
     let model = new ML.MultivariateLinearRegression(dataX, dataY);
     this.setState({ model });
+    return model;
   };
 
   koefesienKorelasiAB = (A, B) => {
@@ -76,6 +78,23 @@ class DataPeramalan extends Container {
     );
 
     return atas / bawah;
+  };
+
+  koefesisenDeterminasi = () => {
+    const model = this.modelData();
+    const { data } = this.state;
+    const y = data.map(item => item.y);
+
+    // // SSR / SST
+    const predicatedY = y.map((item, i) =>
+      model.predict([data[i].x1, data[i].x2, data[i].x3, data[i].x4])
+    );
+    const meanY = math.mean(y);
+    const sst = totalArr(y.map(item => math.pow(item - meanY, 2)));
+    const ssr = totalArr(predicatedY.map(item => math.pow(item - meanY, 2)));
+    const r2 = ssr / sst;
+
+    this.setState({ r2 });
   };
 }
 
