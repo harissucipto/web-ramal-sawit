@@ -5,7 +5,7 @@ const Persamaan = ({ data }) => {
   if (!data.length) return <p>Belum Ada Data</p>;
   return (
     <div style={{ marginTop: '20px' }}>
-      <h3>Rersamaan dari model data</h3>
+      <h5>+ Rersamaan dari model data</h5>
       <p>
         {Nama.y} =
         {data.map((item, i) => (

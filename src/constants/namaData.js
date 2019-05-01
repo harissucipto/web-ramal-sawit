@@ -5,4 +5,12 @@ export const textX = [
   'Jarak Tanam',
   'Ketinggian Tempat'
 ];
+export const warna = [
+  '#D17A22',
+  'rgba(75,192,192,1)',
+  '#736F4E',
+  '#3B3923',
+  '#8DDCA4',
+  'goldenrod'
+];
 export const y = 'produksi';

@@ -111,7 +111,7 @@ class TambahDataPeramalan extends React.Component {
               <Col xs="9">
                 <label name="x2">
                   <input
-                    value={this.state.x1}
+                    value={this.state.x2}
                     onChange={e => this.setState({ x2: e.target.value })}
                   />
                 </label>

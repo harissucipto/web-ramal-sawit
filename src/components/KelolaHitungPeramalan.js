@@ -14,7 +14,10 @@ export default class KelolaHitungPeramalan extends Component {
     return (
       <div>
         <InputRamal model={model} />
-        <Persamaan data={model.weights} />
+        <div style={{ marginTop: '40px' }}>
+          <h2>Model Data Peramalan</h2>
+          <Persamaan data={model.weights} />
+        </div>
       </div>
     );
   }

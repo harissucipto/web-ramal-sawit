@@ -97,7 +97,7 @@ export default class InputRamal extends Component {
         {show && (
           <div style={{ textAlign: 'center', margin: '40px 0' }}>
             <h4>Hasil Ramal Produksi</h4>
-            {y} Produksi
+            {math.round(y, 4)} Produksi
           </div>
         )}
       </div>

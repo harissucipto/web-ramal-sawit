@@ -10,6 +10,7 @@ import HomePage from './containers/HomePage';
 import AdminPage from './containers/AdminPage';
 import DataPeramalanPage from './containers/DataPeramalanPage';
 import HitungPeramalanPage from './containers/HitungPeramalanPage';
+import GrafikPeramalanPage from './containers/GrafikPeramalanPage'
 
 const App = () => {
   let dataPeramalan = new DataPeramalan();
@@ -22,6 +23,7 @@ const App = () => {
           <Route path={ROUTES.ADMIN} component={AdminPage} />
           <Route path={ROUTES.DATA} component={DataPeramalanPage} />
           <Route path={ROUTES.HITUNG} component={HitungPeramalanPage} />
+          <Route path={ROUTES.GRAFIK} component={GrafikPeramalanPage} />
         </Layout>
       </Router>
     </Provider>
