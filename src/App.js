@@ -10,7 +10,7 @@ import HomePage from './containers/HomePage';
 import AdminPage from './containers/AdminPage';
 import DataPeramalanPage from './containers/DataPeramalanPage';
 import HitungPeramalanPage from './containers/HitungPeramalanPage';
-import GrafikPeramalanPage from './containers/GrafikPeramalanPage'
+import GrafikPeramalanPage from './containers/GrafikPeramalanPage';
 
 const App = () => {
   let dataPeramalan = new DataPeramalan();
@@ -19,11 +19,11 @@ const App = () => {
     <Provider inject={[dataPeramalan]}>
       <Router>
         <Layout>
-          <Route exact path={ROUTES.DASHBOARD} component={HomePage} />
-          <Route path={ROUTES.ADMIN} component={AdminPage} />
-          <Route path={ROUTES.DATA} component={DataPeramalanPage} />
-          <Route path={ROUTES.HITUNG} component={HitungPeramalanPage} />
-          <Route path={ROUTES.GRAFIK} component={GrafikPeramalanPage} />
+          <Route exact path={ROUTES.HOME} component={HomePage} />
+          <Route path={ROUTES.AKUN} component={AdminPage} />
+          <Route path={ROUTES.LATIH} component={DataPeramalanPage} />
+          <Route path={ROUTES.PERAMALAN} component={HitungPeramalanPage} />
+          <Route path={ROUTES.ANALISA} component={GrafikPeramalanPage} />
         </Layout>
       </Router>
     </Provider>

@@ -1,6 +1,6 @@
-export const DASHBOARD = '/';
-export const ADMIN = '/data-admin';
-export const PERAMALAN = '/sistem-peramalan';
-export const DATA = '/data-peramalan';
-export const HITUNG = '/hitung-peramalan';
-export const GRAFIK = '/grafik-peramalan';
+export const HOME = '/';
+export const AKUN = '/akun';
+export const PERAMALAN = '/peramalan';
+export const LATIH = '/latih-model';
+export const ANALISA = '/analisa-model';
+export const PETUNJUK = '/petunjuk';
