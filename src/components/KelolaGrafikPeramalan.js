@@ -9,6 +9,7 @@ import GrafikKorelasiX1 from './GrafikKorelasiX1';
 import GrafikKorelasiX2 from './GrafikKorelasiX2';
 import GrafikKorelasiX3 from './GrafikKorelasiX3';
 import GrafikKorelasiX4 from './GrafikKorelasiX4';
+import GrafikDeterminasi from './GrafikDeterminasi';
 
 const H3 = styled.h3`
   margin-top: 40px;
@@ -23,18 +24,27 @@ const H4 = styled.h5`
 export default class KelolaGrafikPeramalan extends Component {
   componentWillMount() {
     this.props.modelData();
+    this.props.koefesisenDeterminasi();
   }
 
   render() {
-    const { model, data } = this.props.state;
+    const { model, data, r2 } = this.props.state;
     if (!model) return <div>Loading...</div>;
 
     return (
       <div>
         <Row>
-          <GrafikData data={data} model={model} />
+          <Col>
+            <GrafikData data={data} model={model} />
+          </Col>
         </Row>
-        <H3>Korelasi Variable Peramalan</H3>
+        <Row style={{ marginTop: '20px', marginBottom: '40px' }}>
+          <Col>
+            <H3>Korelasi Determinasi Variable Peramalan</H3>
+            <GrafikDeterminasi r2={r2} />
+          </Col>
+        </Row>
+        <H3 style={{ marginTop: '20px' }}>Korelasi Variable Peramalan</H3>
         <Row>
           <Col md="6" style={{ marginBottom: '20px' }}>
             <H4 style={{ color: NAMA.warna[0] }}>Korelasi {NAMA.textX[0]}</H4>
