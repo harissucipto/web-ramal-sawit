@@ -4,6 +4,9 @@ import Button from 'react-bootstrap/Button';
 import Alert from 'react-bootstrap/Alert';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
+import InputDate from 'react-date-picker';
+import moment from 'moment';
+import * as NAMA from '../constants/namaData';
 
 class TambahDataPeramalan extends React.Component {
   state = {
@@ -16,7 +19,7 @@ class TambahDataPeramalan extends React.Component {
     error: ''
   };
 
-  componentDidMount() {
+  componentWillMount() {
     const { x1, x2, x3, x4, y, id, tanggal } = this.props.item;
     this.setState({
       id,
@@ -85,10 +88,27 @@ class TambahDataPeramalan extends React.Component {
             )}
 
             <Row>
-              <Col xs="3">Produksi</Col>
-              <Col xs="9">
-                <label name="y">
+              <Col xs="4">Tanggal</Col>
+              <Col xs="8">
+                <label name="tanggal" style={{ width: '100%' }}>
+                  <InputDate
+                    required
+                    style={{ width: '80px' }}
+                    format="dd-MM-yyyy"
+                    value={this.state.tanggal.toDate()}
+                    onChange={tanggal =>
+                      this.setState({ tanggal: moment(tanggal) })
+                    }
+                  />
+                </label>
+              </Col>
+            </Row>
+            <Row>
+              <Col xs="4">Produksi</Col>
+              <Col xs="8">
+                <label name="produksi" style={{ width: '100%' }}>
                   <input
+                    required
                     value={this.state.y}
                     onChange={e => this.setState({ y: e.target.value })}
                   />
@@ -96,10 +116,11 @@ class TambahDataPeramalan extends React.Component {
               </Col>
             </Row>
             <Row>
-              <Col xs="3">Pupuk</Col>
-              <Col xs="9">
+              <Col xs="4">{NAMA.textX[0]}</Col>
+              <Col xs="8">
                 <label name="x1">
                   <input
+                    required
                     value={this.state.x1}
                     onChange={e => this.setState({ x1: e.target.value })}
                   />
@@ -107,10 +128,11 @@ class TambahDataPeramalan extends React.Component {
               </Col>
             </Row>
             <Row>
-              <Col xs="3">Curah Hujan</Col>
-              <Col xs="9">
+              <Col xs="4">{NAMA.textX[1]}</Col>
+              <Col xs="8">
                 <label name="x2">
                   <input
+                    required
                     value={this.state.x2}
                     onChange={e => this.setState({ x2: e.target.value })}
                   />
@@ -118,10 +140,11 @@ class TambahDataPeramalan extends React.Component {
               </Col>
             </Row>
             <Row>
-              <Col xs="3">Jarak Tanam</Col>
-              <Col xs="9">
+              <Col xs="4">{NAMA.textX[2]}</Col>
+              <Col xs="8">
                 <label name="x3">
                   <input
+                    required
                     value={this.state.x3}
                     onChange={e => this.setState({ x3: e.target.value })}
                   />
@@ -129,10 +152,11 @@ class TambahDataPeramalan extends React.Component {
               </Col>
             </Row>
             <Row>
-              <Col xs="3">Ketinggian Tempat</Col>
-              <Col xs="9">
+              <Col xs="4">{NAMA.textX[3]}</Col>
+              <Col xs="8">
                 <label name="x4">
                   <input
+                    required
                     value={this.state.x4}
                     onChange={e => this.setState({ x4: e.target.value })}
                   />
