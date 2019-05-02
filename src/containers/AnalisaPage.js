@@ -7,7 +7,6 @@ import Card from 'react-bootstrap/Card';
 import { Link } from 'react-router-dom';
 
 import * as ROUTES from '../constants/routes';
-import * as NAMA from '../constants/namaData';
 
 import TablePersamaan from '../components/TablePersamaan';
 import TableKorelasiVariable from '../components/TableKorelasiVariable';

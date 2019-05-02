@@ -13,7 +13,6 @@ class TableDataPeramalan extends Component {
 
   render() {
     const { data, model } = this.props.state;
-    console.log(model, 'ini props');
 
     if (!data.length || !model) return <p>Belum ada data</p>;
 

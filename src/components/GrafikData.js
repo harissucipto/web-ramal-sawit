@@ -1,23 +1,23 @@
 import React from 'react';
 import { Line } from 'react-chartjs-2';
 import * as NAMA from '../constants/namaData';
+import math from 'mathjs';
 
 const GrafikData = ({ data = [], model }) => {
-  console.log(data, 'ini dari data');
   const filterData = {
     labels: data.map(item => item.tanggal.format('MM-YYYY')),
     datasets: [
       {
-        label: 'Prediksi',
+        label: 'Prediksi (ton)',
         data: data.map(item =>
-          model.predict([item.x1, item.x2, item.x3, item.x4])
+          math.round(model.predict([item.x1, item.x2, item.x3, item.x4]), 4)
         ),
         fill: false,
         borderColor: NAMA.warna[5],
         backgroundColor: NAMA.warna[5]
       },
       {
-        label: 'Produksi',
+        label: 'Produksi (ton)',
         fill: false,
         data: data.map(item => item.y),
         borderColor: NAMA.warna[4],
@@ -25,7 +25,7 @@ const GrafikData = ({ data = [], model }) => {
       },
       {
         show: false,
-        label: NAMA.textX[0],
+        label: NAMA.textXsatuan[0],
         data: data.map(item => item.x1),
         fill: false,
         borderColor: NAMA.warna[0],
@@ -33,7 +33,7 @@ const GrafikData = ({ data = [], model }) => {
       },
       {
         show: false,
-        label: NAMA.textX[1],
+        label: NAMA.textXsatuan[1],
         data: data.map(item => item.x2),
         fill: false,
         borderColor: NAMA.warna[1],
@@ -41,7 +41,7 @@ const GrafikData = ({ data = [], model }) => {
       },
       {
         show: false,
-        label: NAMA.textX[2],
+        label: NAMA.textXsatuan[2],
         data: data.map(item => item.x3),
         fill: false,
         borderColor: NAMA.warna[2],
@@ -49,7 +49,7 @@ const GrafikData = ({ data = [], model }) => {
       },
       {
         show: false,
-        label: NAMA.textX[3],
+        label: NAMA.textXsatuan[3],
         data: data.map(item => item.x4),
         fill: false,
         borderColor: NAMA.warna[3],

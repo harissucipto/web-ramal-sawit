@@ -1,26 +1,14 @@
 import React, { Component } from 'react';
-import styled from 'styled-components';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Card from 'react-bootstrap/Card';
 
-import * as NAMA from '../constants/namaData';
 import GrafikData from './GrafikData';
 import GrafikKorelasiX1 from './GrafikKorelasiX1';
 import GrafikKorelasiX2 from './GrafikKorelasiX2';
 import GrafikKorelasiX3 from './GrafikKorelasiX3';
 import GrafikKorelasiX4 from './GrafikKorelasiX4';
 import GrafikDeterminasi from './GrafikDeterminasi';
-
-const H3 = styled.h3`
-  margin-top: 40px;
-  text-align: center;
-`;
-
-const H4 = styled.h5`
-  margin-top: 40px;
-  text-align: center;
-`;
 
 export default class KelolaGrafikPeramalan extends Component {
   componentWillMount() {

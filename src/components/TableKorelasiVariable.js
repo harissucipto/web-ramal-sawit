@@ -3,8 +3,6 @@ import Table from 'react-bootstrap/Table';
 import math from 'mathjs';
 import * as NAMA from '../constants/namaData';
 
-const weight = ['b1', 'b2', 'b3', 'b4', 'a'];
-
 class TableKorelasiVariable extends Component {
   componentWillMount() {
     this.props.modelData();
@@ -12,7 +10,7 @@ class TableKorelasiVariable extends Component {
   }
 
   render() {
-    const { model, r2 } = this.props.state;
+    const { model } = this.props.state;
     if (!model) return <p>Loading...</p>;
 
     const { data } = this.props.state;

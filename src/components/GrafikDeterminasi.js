@@ -8,7 +8,7 @@ const GrafikData = ({ r2 }) => {
   const sisa = math.round(100 - data);
 
   const filterData = {
-    labels: [`pengaruh variable`, `tidak terlibat`],
+    labels: [`pengaruh variable (%)`, `tidak terlibat (%)`],
     datasets: [
       {
         data: [data, sisa],

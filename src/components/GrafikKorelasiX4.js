@@ -1,7 +1,7 @@
 import React from 'react';
 import { Pie } from 'react-chartjs-2';
 import * as NAMA from '../constants/namaData';
-import { toPersen, kosongPersen } from '../utils/hitung';
+import { toPersen } from '../utils/hitung';
 import math from 'mathjs';
 
 const GrafikData = ({ data = [], korelasi, cari = '' }) => {
@@ -15,8 +15,6 @@ const GrafikData = ({ data = [], korelasi, cari = '' }) => {
   const x4x2 = math.round(korelasi(x4, x2), 4);
   const x4x3 = math.round(korelasi(x4, x3), 4);
   const x1y = math.round(korelasi(x2, y), 4);
-
-  console.log(x4x2);
 
   const filterData = {
     labels: [
