@@ -17,23 +17,27 @@ export default class KelolaHitungPeramalan extends Component {
     const { model, r2 } = this.props.state;
     if (!model) return <p>Loading...</p>;
     return (
-      <Row>
-        <Col md="8">
-          <InputRamal model={model} />
-        </Col>
-        <Col md="4">
-          <Card>
-            <Card.Body>
-              <Card.Title className="text-center" style={{ color: 'blue' }}>
-                Rumus Prediksi Peramalan
-              </Card.Title>
-              <Card.Text>
-                <Persamaan data={model.weights} />
-              </Card.Text>
-            </Card.Body>
-          </Card>
-        </Col>
-      </Row>
+      <>
+        <Row>
+          <Col>
+            <Card>
+              <Card.Body>
+                <Card.Title className="text-center" style={{ color: 'blue' }}>
+                  Rumus Prediksi Peramalan yang digunakan
+                </Card.Title>
+                <Card.Text className="text-center">
+                  <Persamaan data={model.weights} />
+                </Card.Text>
+              </Card.Body>
+            </Card>
+          </Col>
+        </Row>
+        <Row className="mt-lg-3">
+          <Col>
+            <InputRamal model={model} />
+          </Col>
+        </Row>
+      </>
     );
   }
 }
