@@ -29,7 +29,7 @@ class HomePage extends React.Component {
         <Row className="mt-5">
           <Col xs="12" md="3">
             <MenuItem
-              title={'Latih Model Data'}
+              title={'1. Latih Model Data'}
               desc={'Latih Model Data Agar Aplikasi Dapat Melakukan Peramalan.'}
               btn={'Latih Model!'}
               pathname={ROUTES.LATIH}
@@ -38,7 +38,7 @@ class HomePage extends React.Component {
           </Col>
           <Col xs="12" md="3">
             <MenuItem
-              title={'Analisa Model Data'}
+              title={'2. Analisa Model Data'}
               desc={
                 'Lihat Model Data yang Telah Di buat Aplikasi Berdasarkan Data yang telah dilatih.'
               }
@@ -49,7 +49,7 @@ class HomePage extends React.Component {
           </Col>
           <Col xs="12" md="3">
             <MenuItem
-              title={'Peramalan Produksi'}
+              title={'3. Peramalan Produksi'}
               desc="
                 Lakukan Peramalan Produksi Kelapa Sawit berdasrakan model data yang telah dibuat"
               btn={'Lakukan Peramalan!!'}

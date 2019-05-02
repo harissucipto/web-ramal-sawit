@@ -12,7 +12,7 @@ const Header = ({ location, history }) => {
   const pathname = location.pathname;
   return (
     <Navbar sticky="top" expand="md" bg="dark" variant="dark">
-      <Navbar.Brand href="#home">
+      <Navbar.Brand onClick={() => history.push(ROUTES.HOME)}>
         <img
           src={palm}
           width="30"
