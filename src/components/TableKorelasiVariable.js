@@ -37,6 +37,7 @@ class TableKorelasiVariable extends Component {
     const x3x4 = math.round(korelasi(x3, x4), 4);
     const x3y = math.round(korelasi(x3, y), 4);
     const x4y = math.round(korelasi(x4, y), 4);
+    const x4x4 = math.round(korelasi(x4, x4), 4);
     const yy = math.round(korelasi(y, y), 4);
 
     return (
@@ -89,7 +90,7 @@ class TableKorelasiVariable extends Component {
             <td>{x1x4}</td>
             <td>{x2x4}</td>
             <td>{x3x4}</td>
-            <td>{x4y}</td>
+            <td>{x4x4}</td>
           </tr>
         </tbody>
       </Table>
