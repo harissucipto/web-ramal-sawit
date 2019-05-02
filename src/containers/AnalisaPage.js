@@ -10,6 +10,8 @@ import * as ROUTES from '../constants/routes';
 import * as NAMA from '../constants/namaData';
 
 import TablePersamaan from '../components/TablePersamaan';
+import TableKorelasiVariable from '../components/TableKorelasiVariable';
+
 import DataPeramalan from './DataPeramalan';
 import KelolaGrafikPeramalan from '../components/KelolaGrafikPeramalan';
 
@@ -42,15 +44,15 @@ export default class DataPeramalanPage extends Component {
             </Card>
           </Col>
           <Col xs="12" md="3">
-            <h4 className="text-center mb-3">Table Persamaan</h4>
+            <h4 className="text-center mb-3">Tabel Persamaan</h4>
             <Subscribe to={[DataPeramalan]}>
               {data => <TablePersamaan {...data} />}
             </Subscribe>
           </Col>
-          <Col xs="12" md="3">
-            <h4 className="text-center mb-3">Table Korelasi Variable</h4>
+          <Col xs="12" md="6">
+            <h4 className="text-center mb-3">Tabel Korelasi Variable</h4>
             <Subscribe to={[DataPeramalan]}>
-              {data => <TablePersamaan {...data} />}
+              {data => <TableKorelasiVariable {...data} />}
             </Subscribe>
           </Col>
         </Row>
