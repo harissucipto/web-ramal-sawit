@@ -7,8 +7,9 @@ import DataPeramalan from './containers/DataPeramalan';
 import * as ROUTES from './constants/routes';
 import Layout from './components/Layout';
 import HomePage from './containers/HomePage';
+import LatihPage from './containers/LatihPage';
+
 import AdminPage from './containers/AdminPage';
-import DataPeramalanPage from './containers/DataPeramalanPage';
 import HitungPeramalanPage from './containers/HitungPeramalanPage';
 import GrafikPeramalanPage from './containers/GrafikPeramalanPage';
 
@@ -20,8 +21,8 @@ const App = () => {
       <Router>
         <Layout>
           <Route exact path={ROUTES.HOME} component={HomePage} />
+          <Route path={ROUTES.LATIH} component={LatihPage} />
           <Route path={ROUTES.AKUN} component={AdminPage} />
-          <Route path={ROUTES.LATIH} component={DataPeramalanPage} />
           <Route path={ROUTES.PERAMALAN} component={HitungPeramalanPage} />
           <Route path={ROUTES.ANALISA} component={GrafikPeramalanPage} />
         </Layout>

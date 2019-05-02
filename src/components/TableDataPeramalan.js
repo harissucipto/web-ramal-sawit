@@ -6,7 +6,7 @@ import Edit from './EditDataPeramalan';
 import * as NAMA from '../constants/namaData';
 
 const TableDataPeramalan = ({ data = [], onHapus, onEdit }) => (
-  <Table bordered responsive>
+  <Table striped bordered hover responsive>
     <thead>
       <tr>
         <th>No</th>
