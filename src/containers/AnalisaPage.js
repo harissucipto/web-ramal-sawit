@@ -23,7 +23,7 @@ export default class DataPeramalanPage extends Component {
     return (
       <Container fluid>
         <Row className="mt-5">
-          <Col xs="12" md="3">
+          <Col xs="12" md="6" lg="3">
             <Card>
               <Card.Img variant="top" src={analisa} height="250" />
               <Card.Body>
@@ -44,7 +44,7 @@ export default class DataPeramalanPage extends Component {
               </Card.Body>
             </Card>
           </Col>
-          <Col xs="12" md="3">
+          <Col xs="12" md="6" lg="3" className="mb-5">
             <Card>
               <Card.Body>
                 <h4 className="text-center mb-5">Tabel Persamaan</h4>
@@ -54,7 +54,7 @@ export default class DataPeramalanPage extends Component {
               </Card.Body>
             </Card>
           </Col>
-          <Col xs="12" md="6">
+          <Col xs="12" md="12" lg="6">
             <Card>
               <Card.Body>
                 <h4 className="text-center mb-5">Tabel Korelasi Variable</h4>
@@ -65,7 +65,7 @@ export default class DataPeramalanPage extends Component {
             </Card>
           </Col>
         </Row>
-        <Row className="mt-5">
+        <Row className="mt-3 mb-5">
           <Col xs="12">
             <Card>
               <Card.Body>
@@ -78,11 +78,14 @@ export default class DataPeramalanPage extends Component {
           </Col>
         </Row>
         <Row>
-          <Col xs="12">
-            <h2 className="text-center">Analisa Model Peramalan</h2>
-            <Subscribe to={[DataPeramalan]}>
-              {data => <KelolaGrafikPeramalan {...data} />}
-            </Subscribe>
+          <Col xs="12" className="mb-5">
+            <Card>
+              <Card.Body>
+                <Subscribe to={[DataPeramalan]}>
+                  {data => <KelolaGrafikPeramalan {...data} />}
+                </Subscribe>
+              </Card.Body>
+            </Card>
           </Col>
         </Row>
       </Container>

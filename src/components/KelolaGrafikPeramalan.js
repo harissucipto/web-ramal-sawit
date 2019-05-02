@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import styled from 'styled-components';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
+import Card from 'react-bootstrap/Card';
 
 import * as NAMA from '../constants/namaData';
 import GrafikData from './GrafikData';
@@ -34,45 +35,77 @@ export default class KelolaGrafikPeramalan extends Component {
     return (
       <div>
         <Row>
-          <Col>
-            <GrafikData data={data} model={model} />
+          <Col xs="12" lg="3">
+            <Card className="mb-3">
+              <Card.Body>
+                <Card.Title>Grafik Model Peramalan</Card.Title>
+                <Card.Text className="text-justify">
+                  Grafik Model Peramalan, merupakan representasi model data
+                  peramalan.
+                  <br />
+                  Untuk Melihat Informasi dengan Detail Anda Bisa{' '}
+                  <b> mengklik attribut pada grafik </b>tersebut.
+                </Card.Text>
+              </Card.Body>
+            </Card>
+            <Card>
+              <Card.Body>
+                <GrafikDeterminasi r2={r2} />
+              </Card.Body>
+            </Card>
+          </Col>
+          <Col xs="12" lg="9">
+            <Card>
+              <Card.Body>
+                <GrafikData data={data} model={model} />
+              </Card.Body>
+            </Card>
           </Col>
         </Row>
-        <Row style={{ marginTop: '20px', marginBottom: '40px' }}>
-          <Col>
-            <H3>Korelasi Determinasi Variable Peramalan</H3>
-            <GrafikDeterminasi r2={r2} />
+
+        <Row className="mt-5">
+          <Col md="6">
+            <Card>
+              <Card.Body>
+                <GrafikKorelasiX1
+                  data={data}
+                  korelasi={this.props.koefesienKorelasiAB}
+                />
+              </Card.Body>
+            </Card>
+          </Col>
+          <Col md="6">
+            <Card>
+              <Card.Body>
+                <GrafikKorelasiX2
+                  data={data}
+                  korelasi={this.props.koefesienKorelasiAB}
+                />
+              </Card.Body>
+            </Card>
           </Col>
         </Row>
-        <H3 style={{ marginTop: '20px' }}>Korelasi Variable Peramalan</H3>
-        <Row>
-          <Col md="6" style={{ marginBottom: '20px' }}>
-            <H4 style={{ color: NAMA.warna[0] }}>Korelasi {NAMA.textX[0]}</H4>
-            <GrafikKorelasiX1
-              data={data}
-              korelasi={this.props.koefesienKorelasiAB}
-            />
+
+        <Row className="mt-3">
+          <Col md="6">
+            <Card>
+              <Card.Body>
+                <GrafikKorelasiX3
+                  data={data}
+                  korelasi={this.props.koefesienKorelasiAB}
+                />
+              </Card.Body>
+            </Card>
           </Col>
           <Col md="6">
-            <H4 style={{ color: NAMA.warna[1] }}>Korelasi {NAMA.textX[1]}</H4>
-            <GrafikKorelasiX2
-              data={data}
-              korelasi={this.props.koefesienKorelasiAB}
-            />
-          </Col>
-          <Col md="6">
-            <H4 style={{ color: NAMA.warna[2] }}>Korelasi {NAMA.textX[2]}</H4>
-            <GrafikKorelasiX3
-              data={data}
-              korelasi={this.props.koefesienKorelasiAB}
-            />
-          </Col>
-          <Col md="6">
-            <H4 style={{ color: NAMA.warna[3] }}>Korelasi {NAMA.textX[3]}</H4>
-            <GrafikKorelasiX4
-              data={data}
-              korelasi={this.props.koefesienKorelasiAB}
-            />
+            <Card>
+              <Card.Body>
+                <GrafikKorelasiX4
+                  data={data}
+                  korelasi={this.props.koefesienKorelasiAB}
+                />
+              </Card.Body>
+            </Card>
           </Col>
         </Row>
       </div>

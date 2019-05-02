@@ -27,7 +27,7 @@ class HomePage extends React.Component {
           </Col>
         </Row>
         <Row className="mt-5">
-          <Col xs="12" md="3">
+          <Col xs="12" md="6" lg="3">
             <MenuItem
               title={'1. Latih Model Data'}
               desc={'Latih Model Data Agar Aplikasi Dapat Melakukan Peramalan.'}
@@ -36,7 +36,7 @@ class HomePage extends React.Component {
               img={latih}
             />
           </Col>
-          <Col xs="12" md="3">
+          <Col xs="12" md="6" lg="3">
             <MenuItem
               title={'2. Analisa Model Data'}
               desc={
@@ -47,7 +47,7 @@ class HomePage extends React.Component {
               img={analisa}
             />
           </Col>
-          <Col xs="12" md="3">
+          <Col xs="12" md="6" lg="3">
             <MenuItem
               title={'3. Peramalan Produksi'}
               desc="
@@ -57,7 +57,7 @@ class HomePage extends React.Component {
               img={ramal}
             />
           </Col>
-          <Col xs="12" md="3">
+          <Col xs="12" md="6" lg="3">
             <MenuItem
               title={'Petunjuk'}
               desc="

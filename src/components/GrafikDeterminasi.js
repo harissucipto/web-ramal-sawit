@@ -4,8 +4,8 @@ import * as NAMA from '../constants/namaData';
 import math from 'mathjs';
 
 const GrafikData = ({ r2 }) => {
-  const data = math.round(r2 * 100, 4);
-  const sisa = 100 - data;
+  const data = math.round(r2 * 100);
+  const sisa = math.round(100 - data);
 
   const filterData = {
     labels: [`pengaruh variable`, `tidak terlibat`],
@@ -18,10 +18,24 @@ const GrafikData = ({ r2 }) => {
   };
 
   const options = {
-    responsive: true
+    responsive: true,
+    title: {
+      display: true,
+      text: 'Korelasi  Determinasi Variable'
+    }
   };
 
-  return <Pie data={filterData} options={options} />;
+  return (
+    <div>
+      <Pie data={filterData} options={options} />
+      <p>Keterangan:</p>
+      <p className="text-justify">
+        <b>{data}% </b>jumlah produksi kelapa sawit dipengaruhi keempat faktor
+        yang dianalisis, sedangkan <b>{sisa}%</b> sisanya dipengaruhi oleh
+        faktor-faktor lain yang tidak dianalisis.
+      </p>
+    </div>
+  );
 };
 
 export default GrafikData;

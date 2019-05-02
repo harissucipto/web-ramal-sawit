@@ -20,10 +20,10 @@ const GrafikData = ({ data = [], korelasi, cari = '' }) => {
 
   const filterData = {
     labels: [
-      `${NAMA.textX[0]}: ${x3x1}`,
-      `${NAMA.textX[1]}: ${x3x2}`,
-      `${NAMA.textX[3]}: ${x3x4}`,
-      `Produksi: ${x3y}`
+      `${NAMA.textX[0]}`,
+      `${NAMA.textX[1]}`,
+      `${NAMA.textX[3]}`,
+      `Produksi`
     ],
     datasets: [
       {
@@ -39,7 +39,11 @@ const GrafikData = ({ data = [], korelasi, cari = '' }) => {
   };
 
   const options = {
-    responsive: true
+    responsive: true,
+    title: {
+      display: true,
+      text: 'Korelasi Jarak Tanam'
+    }
   };
 
   return <Pie data={filterData} options={options} />;

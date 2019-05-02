@@ -8,9 +8,9 @@ const MenuItem = ({ history, pathname, img, title, desc, btn }) => {
     <Card>
       <Card.Img variant="top" src={img} height="250" />
       <Card.Body>
-        <Card.Title>{title}</Card.Title>
+        <Card.Title className="mb-2">{title}</Card.Title>
         <Card.Text>{desc}</Card.Text>
-        <Button onClick={() => history.push(pathname)} variant="primary">
+        <Button block onClick={() => history.push(pathname)} variant="primary">
           {btn}
         </Button>
       </Card.Body>

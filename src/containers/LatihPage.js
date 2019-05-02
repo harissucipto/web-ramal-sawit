@@ -19,7 +19,7 @@ export default class LatihPage extends Component {
     return (
       <Container fluid>
         <Row className="mt-5">
-          <Col xs="12" md="3">
+          <Col xs="12" lg="3">
             <Card>
               <Card.Img variant="top" src={latih} height="250" />
               <Card.Body>
@@ -44,7 +44,7 @@ export default class LatihPage extends Component {
               </Card.Body>
             </Card>
           </Col>
-          <Col xs="12" md="9">
+          <Col xs="12" lg="9">
             <h3 className="text-center">Data Perkebunan</h3>
             <Subscribe to={[DataPeramalan]}>
               {data => <KelolaDataPeramalan {...data} />}
