@@ -1,9 +1,9 @@
 export const x = ['x1', 'x2', 'x3', 'x4'];
 export const textX = [
-  'Curah Hujan',
-  'Jumlah Pupuk',
-  'Jarak Tanam',
-  'Ketinggian Tempat'
+  'Curah Hujan (mm)',
+  'Jumlah Pupuk (ton)',
+  'Jarak Tanam (m)',
+  'Ketinggian Tempat (m)'
 ];
 export const warna = [
   'rgba(75,192,192,1)',
