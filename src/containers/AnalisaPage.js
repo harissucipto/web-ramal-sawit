@@ -11,6 +11,7 @@ import * as NAMA from '../constants/namaData';
 
 import TablePersamaan from '../components/TablePersamaan';
 import TableKorelasiVariable from '../components/TableKorelasiVariable';
+import TableDataPerkebunanAnalisa from '../components/TableDataPerkebunanAnalisa';
 
 import DataPeramalan from './DataPeramalan';
 import KelolaGrafikPeramalan from '../components/KelolaGrafikPeramalan';
@@ -44,16 +45,36 @@ export default class DataPeramalanPage extends Component {
             </Card>
           </Col>
           <Col xs="12" md="3">
-            <h4 className="text-center mb-3">Tabel Persamaan</h4>
-            <Subscribe to={[DataPeramalan]}>
-              {data => <TablePersamaan {...data} />}
-            </Subscribe>
+            <Card>
+              <Card.Body>
+                <h4 className="text-center mb-5">Tabel Persamaan</h4>
+                <Subscribe to={[DataPeramalan]}>
+                  {data => <TablePersamaan {...data} />}
+                </Subscribe>
+              </Card.Body>
+            </Card>
           </Col>
           <Col xs="12" md="6">
-            <h4 className="text-center mb-3">Tabel Korelasi Variable</h4>
-            <Subscribe to={[DataPeramalan]}>
-              {data => <TableKorelasiVariable {...data} />}
-            </Subscribe>
+            <Card>
+              <Card.Body>
+                <h4 className="text-center mb-5">Tabel Korelasi Variable</h4>
+                <Subscribe to={[DataPeramalan]}>
+                  {data => <TableKorelasiVariable {...data} />}
+                </Subscribe>
+              </Card.Body>
+            </Card>
+          </Col>
+        </Row>
+        <Row className="mt-5">
+          <Col xs="12">
+            <Card>
+              <Card.Body>
+                <h4 className="text-center mb-5">Tabel Data Perkebunan</h4>
+                <Subscribe to={[DataPeramalan]}>
+                  {data => <TableDataPerkebunanAnalisa {...data} />}
+                </Subscribe>
+              </Card.Body>
+            </Card>
           </Col>
         </Row>
         <Row>
