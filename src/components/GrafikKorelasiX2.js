@@ -18,10 +18,10 @@ const GrafikData = ({ data = [], korelasi, cari = '' }) => {
 
   const filterData = {
     labels: [
-      `${NAMA.textX[0]}`,
-      `${NAMA.textX[2]}`,
-      `${NAMA.textX[3]}`,
-      `Produksi`
+      `${NAMA.textX[0]} (%)`,
+      `${NAMA.textX[2]} (%)`,
+      `${NAMA.textX[3]} (%)`,
+      `Produksi (%)`
     ],
     datasets: [
       {
