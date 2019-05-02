@@ -17,8 +17,16 @@ import KelolaGrafikPeramalan from '../components/KelolaGrafikPeramalan';
 
 import analisa from '../img/analisa.jpg';
 
-export default class DataPeramalanPage extends Component {
+class ProsesData extends Component {
+  componentWillMount() {
+    this.props.modelData();
+    this.props.koefesisenDeterminasi();
+  }
   render() {
+    const { model, r2, data } = this.props.state;
+    const { koefesienKorelasiAB } = this.props;
+    if (!model) return <p>Loading...</p>;
+
     return (
       <Container fluid>
         <Row className="mt-5">
@@ -47,9 +55,7 @@ export default class DataPeramalanPage extends Component {
             <Card>
               <Card.Body>
                 <h4 className="text-center mb-5">Tabel Persamaan</h4>
-                <Subscribe to={[DataPeramalan]}>
-                  {data => <TablePersamaan {...data} />}
-                </Subscribe>
+                <TablePersamaan model={model} r2={r2} />
               </Card.Body>
             </Card>
           </Col>
@@ -57,9 +63,10 @@ export default class DataPeramalanPage extends Component {
             <Card>
               <Card.Body>
                 <h4 className="text-center mb-5">Tabel Korelasi Variable</h4>
-                <Subscribe to={[DataPeramalan]}>
-                  {data => <TableKorelasiVariable {...data} />}
-                </Subscribe>
+                <TableKorelasiVariable
+                  data={data}
+                  koefesienKorelasiAB={koefesienKorelasiAB}
+                />
               </Card.Body>
             </Card>
           </Col>
@@ -69,9 +76,7 @@ export default class DataPeramalanPage extends Component {
             <Card>
               <Card.Body>
                 <h4 className="text-center mb-5">Tabel Data Perkebunan</h4>
-                <Subscribe to={[DataPeramalan]}>
-                  {data => <TableDataPerkebunanAnalisa {...data} />}
-                </Subscribe>
+                <TableDataPerkebunanAnalisa data={data} model={model} />
               </Card.Body>
             </Card>
           </Col>
@@ -80,14 +85,27 @@ export default class DataPeramalanPage extends Component {
           <Col xs="12" className="mb-5">
             <Card>
               <Card.Body>
-                <Subscribe to={[DataPeramalan]}>
-                  {data => <KelolaGrafikPeramalan {...data} />}
-                </Subscribe>
+                <KelolaGrafikPeramalan
+                  model={model}
+                  data={data}
+                  r2={r2}
+                  koefesienKorelasiAB={koefesienKorelasiAB}
+                />
               </Card.Body>
             </Card>
           </Col>
         </Row>
       </Container>
+    );
+  }
+}
+
+export default class DataPeramalanPage extends Component {
+  render() {
+    return (
+      <Subscribe to={[DataPeramalan]}>
+        {data => <ProsesData {...data} />}
+      </Subscribe>
     );
   }
 }

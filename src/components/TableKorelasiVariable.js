@@ -4,16 +4,8 @@ import math from 'mathjs';
 import * as NAMA from '../constants/namaData';
 
 class TableKorelasiVariable extends Component {
-  componentWillMount() {
-    this.props.modelData();
-    this.props.koefesisenDeterminasi();
-  }
-
   render() {
-    const { model } = this.props.state;
-    if (!model) return <p>Loading...</p>;
-
-    const { data } = this.props.state;
+    const { data, koefesienKorelasiAB } = this.props;
 
     const x1 = data.map(item => item.x1);
     const x2 = data.map(item => item.x2);
@@ -21,7 +13,7 @@ class TableKorelasiVariable extends Component {
     const x4 = data.map(item => item.x4);
     const y = data.map(item => item.y);
 
-    const korelasi = this.props.koefesienKorelasiAB;
+    const korelasi = koefesienKorelasiAB;
     const x1x1 = math.round(korelasi(x1, x1), 4);
     const x1x2 = math.round(korelasi(x1, x2), 4);
     const x1x3 = math.round(korelasi(x1, x3), 4);

@@ -6,15 +6,10 @@ import { totalArr } from '../utils/hitung';
 import * as NAMA from '../constants/namaData';
 
 class TableDataPeramalan extends Component {
-  componentWillMount() {
-    this.props.modelData();
-    this.props.koefesisenDeterminasi();
-  }
-
   render() {
-    const { data, model } = this.props.state;
+    const { data, model } = this.props;
 
-    if (!data.length || !model) return <p>Belum ada data</p>;
+    if (!data.length) return <p>Belum ada data</p>;
 
     // return <p>test</p>;
 

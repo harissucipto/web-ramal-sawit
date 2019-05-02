@@ -12,7 +12,6 @@ import AnalisaPage from './containers/AnalisaPage';
 import PeramalanPage from './containers/PeramalanPage';
 
 import AdminPage from './containers/AdminPage';
-import HitungPeramalanPage from './containers/HitungPeramalanPage';
 
 const App = () => {
   let dataPeramalan = new DataPeramalan();

@@ -35,7 +35,6 @@ export default class InputRamal extends Component {
   };
 
   render() {
-    console.log(this.props.model);
     const { x1, x2, x3, x4, show, y } = this.state;
     return (
       <>

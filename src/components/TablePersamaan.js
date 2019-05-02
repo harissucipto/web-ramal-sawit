@@ -5,14 +5,8 @@ import math from 'mathjs';
 const weight = ['b1', 'b2', 'b3', 'b4', 'a'];
 
 class TablePersamaan extends Component {
-  componentWillMount() {
-    this.props.modelData();
-    this.props.koefesisenDeterminasi();
-  }
-
   render() {
-    const { model, r2 } = this.props.state;
-    if (!model) return <p>Loading...</p>;
+    const { model, r2 } = this.props;
 
     return (
       <Table striped bordered hover responsive>

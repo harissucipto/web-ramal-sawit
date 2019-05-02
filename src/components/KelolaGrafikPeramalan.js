@@ -11,13 +11,8 @@ import GrafikKorelasiX4 from './GrafikKorelasiX4';
 import GrafikDeterminasi from './GrafikDeterminasi';
 
 export default class KelolaGrafikPeramalan extends Component {
-  componentWillMount() {
-    this.props.modelData();
-    this.props.koefesisenDeterminasi();
-  }
-
   render() {
-    const { model, data, r2 } = this.props.state;
+    const { model, data, r2, koefesienKorelasiAB } = this.props;
     if (!model) return <div>Loading...</div>;
 
     return (
@@ -55,20 +50,14 @@ export default class KelolaGrafikPeramalan extends Component {
           <Col md="6">
             <Card>
               <Card.Body>
-                <GrafikKorelasiX1
-                  data={data}
-                  korelasi={this.props.koefesienKorelasiAB}
-                />
+                <GrafikKorelasiX1 data={data} korelasi={koefesienKorelasiAB} />
               </Card.Body>
             </Card>
           </Col>
           <Col md="6">
             <Card>
               <Card.Body>
-                <GrafikKorelasiX2
-                  data={data}
-                  korelasi={this.props.koefesienKorelasiAB}
-                />
+                <GrafikKorelasiX2 data={data} korelasi={koefesienKorelasiAB} />
               </Card.Body>
             </Card>
           </Col>
@@ -78,20 +67,14 @@ export default class KelolaGrafikPeramalan extends Component {
           <Col md="6">
             <Card>
               <Card.Body>
-                <GrafikKorelasiX3
-                  data={data}
-                  korelasi={this.props.koefesienKorelasiAB}
-                />
+                <GrafikKorelasiX3 data={data} korelasi={koefesienKorelasiAB} />
               </Card.Body>
             </Card>
           </Col>
           <Col md="6">
             <Card>
               <Card.Body>
-                <GrafikKorelasiX4
-                  data={data}
-                  korelasi={this.props.koefesienKorelasiAB}
-                />
+                <GrafikKorelasiX4 data={data} korelasi={koefesienKorelasiAB} />
               </Card.Body>
             </Card>
           </Col>

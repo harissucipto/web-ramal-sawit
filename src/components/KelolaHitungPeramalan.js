@@ -13,8 +13,7 @@ export default class KelolaHitungPeramalan extends Component {
   }
 
   render() {
-    console.log(this.props.state.model);
-    const { model, r2 } = this.props.state;
+    const { model } = this.props.state;
     if (!model) return <p>Loading...</p>;
     return (
       <>
