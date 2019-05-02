@@ -49,12 +49,7 @@ const Header = ({ location, history }) => {
           >
             Peramalan Produksi
           </Nav.Link>
-          <Nav.Link
-            active={pathname === ROUTES.PETUNJUK}
-            onClick={() => history.push(ROUTES.PETUNJUK)}
-          >
-            Petunjuk
-          </Nav.Link>
+
           <NavDropdown title="Akun" id="collasible-nav-dropdown">
             <NavDropdown.Item
               active={pathname === ROUTES.AKUN}
@@ -63,9 +58,15 @@ const Header = ({ location, history }) => {
               Informasi
             </NavDropdown.Item>
             <NavDropdown.Item href="#action/3.3"> Setting</NavDropdown.Item>
+            <NavDropdown.Item href="#action/3.3">Logout</NavDropdown.Item>
           </NavDropdown>
+          <Nav.Link
+            active={pathname === ROUTES.ABOUT}
+            onClick={() => history.push(ROUTES.ABOUT)}
+          >
+            About
+          </Nav.Link>
         </Nav>
-        <Button className="btn-danger">Logout</Button>
       </Navbar.Collapse>
     </Navbar>
   );

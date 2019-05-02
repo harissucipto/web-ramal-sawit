@@ -59,11 +59,11 @@ class HomePage extends React.Component {
           </Col>
           <Col xs="12" md="6" lg="3">
             <MenuItem
-              title={'Petunjuk'}
+              title={'About'}
               desc="
-              Pelajari Lebih Lanjut, Bagaimanq caranya menggunakan aplikasi ini dengan benar."
+              Lihat Halaman Deskripsi Penjelasan Tentang Kenapa Dibuatnya Aplikasi ini"
               btn={'Liat Petunjuk'}
-              pathname={ROUTES.PETUNJUK}
+              pathname={ROUTES.ABOUT}
               img={doc}
             />
           </Col>

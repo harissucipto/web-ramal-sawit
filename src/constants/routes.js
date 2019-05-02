@@ -3,4 +3,4 @@ export const AKUN = '/akun';
 export const PERAMALAN = '/peramalan';
 export const LATIH = '/latih-model';
 export const ANALISA = '/analisa-model';
-export const PETUNJUK = '/petunjuk';
+export const ABOUT = '/about';

@@ -10,6 +10,7 @@ import HomePage from './containers/HomePage';
 import LatihPage from './containers/LatihPage';
 import AnalisaPage from './containers/AnalisaPage';
 import PeramalanPage from './containers/PeramalanPage';
+import AboutPage from './containers/AboutPage';
 
 import AdminPage from './containers/AdminPage';
 
@@ -24,6 +25,7 @@ const App = () => {
           <Route path={ROUTES.LATIH} component={LatihPage} />
           <Route path={ROUTES.ANALISA} component={AnalisaPage} />
           <Route path={ROUTES.PERAMALAN} component={PeramalanPage} />
+          <Route path={ROUTES.ABOUT} component={AboutPage} />
 
           <Route path={ROUTES.AKUN} component={AdminPage} />
         </Layout>
