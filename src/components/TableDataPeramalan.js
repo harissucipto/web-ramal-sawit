@@ -3,17 +3,19 @@ import Table from 'react-bootstrap/Table';
 import Hapus from './HapusDataPeramalan';
 import Edit from './EditDataPeramalan';
 
+import * as NAMA from '../constants/namaData';
+
 const TableDataPeramalan = ({ data = [], onHapus, onEdit }) => (
   <Table bordered responsive>
     <thead>
       <tr>
         <th>No</th>
         <th>Bulan</th>
-        <th>Produksi</th>
-        <th>Pupuk</th>
-        <th>Curah Hujan</th>
-        <th>Jarak Tanam</th>
-        <th>Ketinggian Tempat</th>
+        <th>Produksi (ton)</th>
+        <th>{NAMA.textX[0]}</th>
+        <th>{NAMA.textX[1]}</th>
+        <th>{NAMA.textX[2]}</th>
+        <th>{NAMA.textX[3]}</th>
         <th>Aksi</th>
       </tr>
     </thead>
