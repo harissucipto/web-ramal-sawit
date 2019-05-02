@@ -21,7 +21,7 @@ export default class LatihPage extends Component {
         <Row className="mt-5">
           <Col xs="12" lg="3">
             <Card>
-              <Card.Img variant="top" src={latih} height="250" />
+              <Card.Img variant="top" src={latih} />
               <Card.Body>
                 <Card.Title>Latih Model Peramalan</Card.Title>
                 <Card.Text className="text-justify">

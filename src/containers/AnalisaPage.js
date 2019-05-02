@@ -24,7 +24,7 @@ export default class DataPeramalanPage extends Component {
         <Row className="mt-5">
           <Col xs="12" md="6" lg="3">
             <Card>
-              <Card.Img variant="top" src={analisa} height="250" />
+              <Card.Img variant="top" src={analisa} />
               <Card.Body>
                 <Card.Title>Analisa Model Data Peramalan</Card.Title>
                 <Card.Text className="text-justify">

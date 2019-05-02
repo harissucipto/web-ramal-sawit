@@ -1,4 +1,8 @@
 import React, { Component } from 'react';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
+import Card from 'react-bootstrap/Card';
+
 import Persamaan from './Persamaan';
 import InputRamal from './InputRamal';
 
@@ -13,14 +17,23 @@ export default class KelolaHitungPeramalan extends Component {
     const { model, r2 } = this.props.state;
     if (!model) return <p>Loading...</p>;
     return (
-      <div>
-        <InputRamal model={model} />
-        <div style={{ marginTop: '40px' }}>
-          <h2>Model Data Peramalan</h2>
-          <Persamaan data={model.weights} />
-          <p>R2 (Koefesien Determinasi) = {r2}</p>
-        </div>
-      </div>
+      <Row>
+        <Col md="8">
+          <InputRamal model={model} />
+        </Col>
+        <Col md="4">
+          <Card>
+            <Card.Body>
+              <Card.Title className="text-center" style={{ color: 'blue' }}>
+                Rumus Prediksi Peramalan
+              </Card.Title>
+              <Card.Text>
+                <Persamaan data={model.weights} />
+              </Card.Text>
+            </Card.Body>
+          </Card>
+        </Col>
+      </Row>
     );
   }
 }

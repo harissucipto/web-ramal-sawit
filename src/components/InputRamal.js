@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Card from 'react-bootstrap/Card';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Button from 'react-bootstrap/Button';
@@ -37,70 +38,89 @@ export default class InputRamal extends Component {
     console.log(this.props.model);
     const { x1, x2, x3, x4, show, y } = this.state;
     return (
-      <div style={{ marginTop: '40px' }}>
-        <p>
-          Masukan data inputan dibawah ini untuk meramal produksi berdasarkan
-          data training yang telah diinput
-        </p>
-        <form
-          onSubmit={e => {
-            e.preventDefault();
-            this.ramal();
-          }}
-        >
-          <Row style={{ marginTop: '40px' }}>
-            <Col md="3">{Nama.textX[0]}</Col>
-            <Col md="3">
-              <Input
-                required
-                type="number"
-                value={x1}
-                onChange={event => this.setState({ x1: event.target.value })}
-              />
-            </Col>
-            <Col md="3">{Nama.textX[1]}</Col>
-            <Col md="3">
-              <Input
-                required
-                type="number"
-                value={x2}
-                onChange={event => this.setState({ x2: event.target.value })}
-              />
-            </Col>
-          </Row>
-          <Row style={{ marginTop: '20px' }}>
-            <Col md="3">{Nama.textX[2]}</Col>
-            <Col md="3">
-              <Input
-                required
-                type="number"
-                value={x3}
-                onChange={event => this.setState({ x3: event.target.value })}
-              />
-            </Col>
-            <Col md="3">{Nama.textX[3]}</Col>
-            <Col md="3">
-              <Input
-                type="number"
-                required
-                value={x4}
-                onChange={event => this.setState({ x4: event.target.value })}
-              />
-            </Col>
-          </Row>
+      <>
+        <Card>
+          <Card.Body>
+            <Card.Title>Lakukan Peramalan Produksi</Card.Title>
+            <i>
+              Input 4 Data Dibawah, untuk melakukan peramalan produksi kelapa
+              sawit
+            </i>
+            <form
+              onSubmit={e => {
+                e.preventDefault();
+                this.ramal();
+              }}
+            >
+              <Row style={{ marginTop: '40px' }}>
+                <Col md="3">{Nama.textXsatuan[0]}</Col>
+                <Col md="3">
+                  <Input
+                    required
+                    type="number"
+                    value={x1}
+                    onChange={event =>
+                      this.setState({ x1: event.target.value })
+                    }
+                  />
+                </Col>
+                <Col md="3">{Nama.textXsatuan[1]}</Col>
+                <Col md="3">
+                  <Input
+                    required
+                    type="number"
+                    value={x2}
+                    onChange={event =>
+                      this.setState({ x2: event.target.value })
+                    }
+                  />
+                </Col>
+              </Row>
+              <Row style={{ marginTop: '20px' }}>
+                <Col md="3">{Nama.textXsatuan[2]}</Col>
+                <Col md="3">
+                  <Input
+                    required
+                    type="number"
+                    value={x3}
+                    onChange={event =>
+                      this.setState({ x3: event.target.value })
+                    }
+                  />
+                </Col>
+                <Col md="3">{Nama.textXsatuan[3]}</Col>
+                <Col md="3">
+                  <Input
+                    type="number"
+                    required
+                    value={x4}
+                    onChange={event =>
+                      this.setState({ x4: event.target.value })
+                    }
+                  />
+                </Col>
+              </Row>
 
-          <Button type="submit" block size="lg" style={{ marginTop: '30px' }}>
-            Ramal
-          </Button>
-        </form>
-
+              <Button
+                type="submit"
+                block
+                size="lg"
+                style={{ marginTop: '30px' }}
+              >
+                Ramal
+              </Button>
+            </form>
+          </Card.Body>
+        </Card>
         {show && (
-          <div style={{ textAlign: 'center', margin: '40px 0' }}>
-            <h4>Hasil Ramal Produksi</h4>
-            {math.round(y, 4)} Produksi
-          </div>
+          <Card style={{ textAlign: 'center', margin: '40px 0' }}>
+            <Card.Body>
+              <h4>Hasil Ramal Produksi Kelapa Sawit</h4>
+              {math.round(y, 4)} Ton
+            </Card.Body>
+          </Card>
         )}
-      </div>
+      </>
     );
   }
 }
