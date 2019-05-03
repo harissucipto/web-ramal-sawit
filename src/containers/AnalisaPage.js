@@ -19,12 +19,17 @@ import analisa from '../img/analisa.jpg';
 
 class ProsesData extends Component {
   componentWillMount() {
-    this.props.modelData();
-    this.props.koefesisenDeterminasi();
+    // jika ada data lakukan analisa
+    if (this.props.state.data.length) {
+      this.props.modelData();
+      this.props.koefesisenDeterminasi();
+    }
   }
   render() {
     const { model, r2, data } = this.props.state;
     const { koefesienKorelasiAB } = this.props;
+    if (!data.length)
+      return <p>Belum Ada Data, Tidak Bisa melakukan Analisa</p>;
     if (!model) return <p>Loading...</p>;
 
     return (

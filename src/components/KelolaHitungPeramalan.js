@@ -8,12 +8,17 @@ import InputRamal from './InputRamal';
 
 export default class KelolaHitungPeramalan extends Component {
   componentWillMount() {
-    this.props.modelData();
-    this.props.koefesisenDeterminasi();
+    // jika ada data lakukan analisa
+    if (this.props.state.data.length) {
+      this.props.modelData();
+      this.props.koefesisenDeterminasi();
+    }
   }
 
   render() {
-    const { model } = this.props.state;
+    const { model, data } = this.props.state;
+    if (!data.length)
+      return <p>Belum Ada Data, Tidak Bisa melakukan Peramalan!</p>;
     if (!model) return <p>Loading...</p>;
     return (
       <>
