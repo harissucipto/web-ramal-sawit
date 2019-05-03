@@ -17,12 +17,12 @@ class ProsesData extends Component {
 
     return (
       <Row className="mt-5 justify-content-center">
-        <Col md="6">
+        <Col md="8">
           <Card border>
             <Card.Body>
               <Row>
                 <Col md="8">
-                  <h5>Informasin Akun Login</h5>
+                  <h5>Data Akun</h5>
                 </Col>
                 <Col md="4">
                   <Button className="mr-2" variant="warning">
@@ -68,6 +68,7 @@ export default class AkunPage extends Component {
   render() {
     return (
       <Container>
+        <h3 className="text-center mb-5 mt-5">Informasi Pengguna Login</h3>
         <Subscribe to={[DataPengguna]}>
           {data => <ProsesData {...data} />}
         </Subscribe>

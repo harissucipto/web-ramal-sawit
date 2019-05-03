@@ -52,7 +52,7 @@ const Header = ({ location, history }) => {
           <NavDropdown
             title="Akun"
             id="collasible-nav-dropdown"
-            active={pathname === ROUTES.AKUN}
+            active={pathname === ROUTES.AKUN || pathname === ROUTES.SETTING}
           >
             <NavDropdown.Item
               active={pathname === ROUTES.AKUN}
@@ -60,7 +60,13 @@ const Header = ({ location, history }) => {
             >
               Informasi
             </NavDropdown.Item>
-            <NavDropdown.Item href="#action/3.3"> Setting</NavDropdown.Item>
+            <NavDropdown.Item
+              active={pathname === ROUTES.SETTING}
+              onClick={() => history.push(ROUTES.SETTING)}
+            >
+              {' '}
+              Setting
+            </NavDropdown.Item>
             <NavDropdown.Item href="#action/3.3">Logout</NavDropdown.Item>
           </NavDropdown>
           <Nav.Link

@@ -13,6 +13,7 @@ import AnalisaPage from './containers/AnalisaPage';
 import PeramalanPage from './containers/PeramalanPage';
 import AboutPage from './containers/AboutPage';
 import AkunPage from './containers/AkunPage';
+import SettingPage from './containers/SettingPage';
 
 const App = () => {
   let dataPeramalan = new DataPeramalan();
@@ -27,6 +28,7 @@ const App = () => {
           <Route path={ROUTES.PERAMALAN} component={PeramalanPage} />
           <Route path={ROUTES.ABOUT} component={AboutPage} />
           <Route path={ROUTES.AKUN} component={AkunPage} />
+          <Route path={ROUTES.SETTING} component={SettingPage} />
         </Layout>
       </Router>
     </Provider>
