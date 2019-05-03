@@ -4,9 +4,21 @@ import Card from 'react-bootstrap/Card';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
+import { withRouter } from 'react-router-dom';
 import Button from 'react-bootstrap/Button';
 
 import DataPengguna from './DataPengguna';
+import { SETTING } from '../constants/routes';
+
+const EditButton = withRouter(({ history }) => (
+  <Button
+    className="mr-2"
+    variant="warning"
+    onClick={() => history.push(SETTING)}
+  >
+    Edit
+  </Button>
+));
 
 class ProsesData extends Component {
   render() {
@@ -25,9 +37,7 @@ class ProsesData extends Component {
                   <h5>Data Akun</h5>
                 </Col>
                 <Col md="4">
-                  <Button className="mr-2" variant="warning">
-                    Edit
-                  </Button>
+                  <EditButton />
                   <Button variant="danger">Logout</Button>
                 </Col>
               </Row>

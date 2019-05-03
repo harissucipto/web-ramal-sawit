@@ -11,7 +11,7 @@ import EditPassword from '../components/EditPassword';
 
 class ProsesData extends Component {
   render() {
-    const { state, updateAkun } = this.props;
+    const { state, updateAkun, updatePassword } = this.props;
     console.log(state, 'ini state');
 
     if (!state.uid) return <p>Silahkan Login...</p>;
@@ -38,7 +38,7 @@ class ProsesData extends Component {
                 </Col>
               </Row>
               <hr />
-              <EditPassword {...state} />
+              <EditPassword {...state} updatePassword={updatePassword} />
             </Card.Body>
           </Card>
         </Col>
