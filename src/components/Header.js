@@ -1,7 +1,6 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
 import Navbar from 'react-bootstrap/Navbar';
-import Button from 'react-bootstrap/Button';
 import Nav from 'react-bootstrap/Nav';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import * as ROUTES from '../constants/routes';
@@ -50,7 +49,11 @@ const Header = ({ location, history }) => {
             Peramalan Produksi
           </Nav.Link>
 
-          <NavDropdown title="Akun" id="collasible-nav-dropdown">
+          <NavDropdown
+            title="Akun"
+            id="collasible-nav-dropdown"
+            active={pathname === ROUTES.AKUN}
+          >
             <NavDropdown.Item
               active={pathname === ROUTES.AKUN}
               onClick={() => history.push(ROUTES.AKUN)}

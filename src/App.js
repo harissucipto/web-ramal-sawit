@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route } from 'react-router-dom';
 import { Provider } from 'unstated';
 
 import DataPeramalan from './containers/DataPeramalan';
+import DataPengguna from './containers/DataPengguna';
 
 import * as ROUTES from './constants/routes';
 import Layout from './components/Layout';
@@ -11,14 +12,13 @@ import LatihPage from './containers/LatihPage';
 import AnalisaPage from './containers/AnalisaPage';
 import PeramalanPage from './containers/PeramalanPage';
 import AboutPage from './containers/AboutPage';
-
-import AdminPage from './containers/AdminPage';
+import AkunPage from './containers/AkunPage';
 
 const App = () => {
   let dataPeramalan = new DataPeramalan();
 
   return (
-    <Provider inject={[dataPeramalan]}>
+    <Provider inject={[dataPeramalan, DataPengguna]}>
       <Router>
         <Layout>
           <Route exact path={ROUTES.HOME} component={HomePage} />
@@ -26,8 +26,7 @@ const App = () => {
           <Route path={ROUTES.ANALISA} component={AnalisaPage} />
           <Route path={ROUTES.PERAMALAN} component={PeramalanPage} />
           <Route path={ROUTES.ABOUT} component={AboutPage} />
-
-          <Route path={ROUTES.AKUN} component={AdminPage} />
+          <Route path={ROUTES.AKUN} component={AkunPage} />
         </Layout>
       </Router>
     </Provider>
