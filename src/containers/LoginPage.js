@@ -33,11 +33,10 @@ class ProsesData extends Component {
         <Col md="3">
           <Card border>
             <Card.Body>
-              <Row className="mb-3" noGutters>
-                <Col md="8">
-                  <h5>Login SISKAWIT</h5>
-                </Col>
-              </Row>
+              <div className="text-center mb-3">
+                <h5>Login SISKAWIT</h5>
+              </div>
+
               <hr />
               <FormLogin login={login} {...state} />
             </Card.Body>
