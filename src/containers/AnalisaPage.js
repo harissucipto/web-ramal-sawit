@@ -4,7 +4,7 @@ import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Card from 'react-bootstrap/Card';
-import { Link } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 
 import * as ROUTES from '../constants/routes';
 
@@ -13,6 +13,7 @@ import TableKorelasiVariable from '../components/TableKorelasiVariable';
 import TableDataPerkebunanAnalisa from '../components/TableDataPerkebunanAnalisa';
 
 import DataPeramalan from './DataPeramalan';
+import DataPengguna from './DataPengguna';
 import KelolaGrafikPeramalan from '../components/KelolaGrafikPeramalan';
 
 import analisa from '../img/analisa.jpg';
@@ -28,6 +29,7 @@ class ProsesData extends Component {
   render() {
     const { model, r2, data } = this.props.state;
     const { koefesienKorelasiAB } = this.props;
+
     if (!data.length)
       return <p>Belum Ada Data, Tidak Bisa melakukan Analisa</p>;
     if (!model) return <p>Loading...</p>;
@@ -108,8 +110,14 @@ class ProsesData extends Component {
 export default class DataPeramalanPage extends Component {
   render() {
     return (
-      <Subscribe to={[DataPeramalan]}>
-        {data => <ProsesData {...data} />}
+      <Subscribe to={[DataPeramalan, DataPengguna]}>
+        {(dataPeramalan, dataPengguna) => {
+          return dataPengguna.state.uid ? (
+            <ProsesData {...dataPeramalan} />
+          ) : (
+            <Redirect to={ROUTES.LOGIN} />
+          );
+        }}
       </Subscribe>
     );
   }

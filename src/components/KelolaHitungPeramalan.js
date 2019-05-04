@@ -17,6 +17,7 @@ export default class KelolaHitungPeramalan extends Component {
 
   render() {
     const { model, data } = this.props.state;
+
     if (!data.length)
       return <p>Belum Ada Data, Tidak Bisa melakukan Peramalan!</p>;
     if (!model) return <p>Loading...</p>;

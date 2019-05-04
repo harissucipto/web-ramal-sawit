@@ -4,7 +4,9 @@ import Card from 'react-bootstrap/Card';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
+import { Redirect } from 'react-router-dom';
 
+import * as ROUTES from '../constants/routes';
 import DataPengguna from './DataPengguna';
 import FormEditAkun from '../components/EditAkunPengguna';
 import EditPassword from '../components/EditPassword';
@@ -14,8 +16,7 @@ class ProsesData extends Component {
     const { state, updateAkun, updatePassword } = this.props;
     console.log(state, 'ini state');
 
-    if (!state.uid) return <p>Silahkan Login...</p>;
-
+    if (!state.uid) return <Redirect to={ROUTES.LOGIN} />;
     return (
       <Row className="mt-5 justify-content-center">
         <Col md="8">

@@ -4,7 +4,7 @@ import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Card from 'react-bootstrap/Card';
-import { Link } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 
 import * as ROUTES from '../constants/routes';
 import * as NAMA from '../constants/namaData';
@@ -12,6 +12,7 @@ import * as NAMA from '../constants/namaData';
 import latih from '../img/latih.png';
 
 import DataPeramalan from './DataPeramalan';
+import DataPengguna from './DataPengguna';
 import KelolaDataPeramalan from '../components/KelolaDataPeramalan';
 
 export default class LatihPage extends Component {
@@ -46,8 +47,14 @@ export default class LatihPage extends Component {
           </Col>
           <Col xs="12" lg="9">
             <h3 className="text-center">Data Perkebunan</h3>
-            <Subscribe to={[DataPeramalan]}>
-              {data => <KelolaDataPeramalan {...data} />}
+            <Subscribe to={[DataPeramalan, DataPengguna]}>
+              {(dataPeramalan, dataPengguna) => {
+                return dataPengguna.state.uid ? (
+                  <KelolaDataPeramalan {...dataPeramalan} />
+                ) : (
+                  <Redirect to={ROUTES.LOGIN} />
+                );
+              }}
             </Subscribe>
           </Col>
         </Row>

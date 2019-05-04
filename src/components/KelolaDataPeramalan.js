@@ -6,6 +6,7 @@ import TambahData from './TambahDataPeramalan';
 export default class KelolaDataPeramalan extends Component {
   render() {
     const { state, tambahData, hapusData, editData } = this.props;
+
     return (
       <div>
         <div
