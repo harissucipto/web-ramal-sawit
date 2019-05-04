@@ -9,11 +9,7 @@ import Footer from './Footer';
 const Layout = ({ children }) => (
   <>
     <Header />
-    <Container fluid style={{ minHeight: '90vh' }}>
-      <Row>
-        <Col lg="12">{children}</Col>
-      </Row>
-    </Container>
+    <div style={{ minHeight: '90vh' }}>{children}</div>
     <Footer />
   </>
 );
