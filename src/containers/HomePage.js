@@ -25,7 +25,6 @@ class ProsesData extends Component {
       <Container fluid>
         <Row className="mt-5 pr-5 pl-5">
           <Col>
-            <h1 className="text-center">SISKAWIT APP</h1>
             <h4 className="text-center mt-5">
               SISKAWIT merupakan aplikasi yang digunakan untuk melakukan
               peramalan produksi kelapa sawit dengan menggunakan metode regresi

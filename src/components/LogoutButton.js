@@ -5,7 +5,9 @@ import DataPengguna from '../containers/DataPengguna';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 
 const ProsesData = ({ logout }) => (
-  <NavDropdown.Item onClick={logout}>logout</NavDropdown.Item>
+  <NavDropdown.Item onClick={logout}>
+    <h5>logout</h5>
+  </NavDropdown.Item>
 );
 
 const LogoutButton = () => (

@@ -38,7 +38,7 @@ class ProsesData extends Component {
       <Container fluid>
         <Row className="mt-5">
           <Col xs="12" md="6" lg="3">
-            <Card>
+            <Card style={{ borderColor: 'green', borderWidth: '4px' }}>
               <Card.Img variant="top" src={analisa} />
               <Card.Body>
                 <Card.Title>Analisa Model Data Peramalan</Card.Title>
@@ -59,7 +59,7 @@ class ProsesData extends Component {
             </Card>
           </Col>
           <Col xs="12" md="6" lg="3" className="mb-5">
-            <Card>
+            <Card style={{ borderColor: 'green', borderWidth: '4px' }}>
               <Card.Body>
                 <h4 className="text-center mb-5">Tabel Persamaan</h4>
                 <TablePersamaan model={model} r2={r2} />
@@ -67,7 +67,7 @@ class ProsesData extends Component {
             </Card>
           </Col>
           <Col xs="12" md="12" lg="6">
-            <Card>
+            <Card style={{ borderColor: 'green', borderWidth: '4px' }}>
               <Card.Body>
                 <h4 className="text-center mb-5">Tabel Korelasi Variable</h4>
                 <TableKorelasiVariable
@@ -80,7 +80,7 @@ class ProsesData extends Component {
         </Row>
         <Row className="mt-3 mb-5">
           <Col xs="12">
-            <Card>
+            <Card style={{ borderColor: 'green', borderWidth: '4px' }}>
               <Card.Body>
                 <h4 className="text-center mb-5">Tabel Data Perkebunan</h4>
                 <TableDataPerkebunanAnalisa data={data} model={model} />
@@ -90,7 +90,7 @@ class ProsesData extends Component {
         </Row>
         <Row>
           <Col xs="12" className="mb-5">
-            <Card>
+            <Card style={{ borderColor: 'green', borderWidth: '4px' }}>
               <Card.Body>
                 <KelolaGrafikPeramalan
                   model={model}

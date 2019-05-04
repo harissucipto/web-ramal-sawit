@@ -19,7 +19,10 @@ export default class KelolaGrafikPeramalan extends Component {
       <div>
         <Row>
           <Col xs="12" lg="3">
-            <Card className="mb-3">
+            <Card
+              style={{ borderColor: 'green', borderWidth: '4px' }}
+              className="mb-3"
+            >
               <Card.Body>
                 <Card.Title>Grafik Model Peramalan</Card.Title>
                 <Card.Text className="text-justify">
@@ -31,14 +34,14 @@ export default class KelolaGrafikPeramalan extends Component {
                 </Card.Text>
               </Card.Body>
             </Card>
-            <Card>
+            <Card style={{ borderColor: 'green', borderWidth: '4px' }}>
               <Card.Body>
                 <GrafikDeterminasi r2={r2} />
               </Card.Body>
             </Card>
           </Col>
           <Col xs="12" lg="9">
-            <Card>
+            <Card style={{ borderColor: 'green', borderWidth: '4px' }}>
               <Card.Body>
                 <GrafikData data={data} model={model} />
               </Card.Body>
@@ -48,14 +51,14 @@ export default class KelolaGrafikPeramalan extends Component {
 
         <Row className="mt-5">
           <Col md="6">
-            <Card>
+            <Card style={{ borderColor: 'green', borderWidth: '4px' }}>
               <Card.Body>
                 <GrafikKorelasiX1 data={data} korelasi={koefesienKorelasiAB} />
               </Card.Body>
             </Card>
           </Col>
           <Col md="6">
-            <Card>
+            <Card style={{ borderColor: 'green', borderWidth: '4px' }}>
               <Card.Body>
                 <GrafikKorelasiX2 data={data} korelasi={koefesienKorelasiAB} />
               </Card.Body>
@@ -65,14 +68,14 @@ export default class KelolaGrafikPeramalan extends Component {
 
         <Row className="mt-3">
           <Col md="6">
-            <Card>
+            <Card style={{ borderColor: 'green', borderWidth: '4px' }}>
               <Card.Body>
                 <GrafikKorelasiX3 data={data} korelasi={koefesienKorelasiAB} />
               </Card.Body>
             </Card>
           </Col>
           <Col md="6">
-            <Card>
+            <Card style={{ borderColor: 'green', borderWidth: '4px' }}>
               <Card.Body>
                 <GrafikKorelasiX4 data={data} korelasi={koefesienKorelasiAB} />
               </Card.Body>

@@ -38,7 +38,7 @@ export default class InputRamal extends Component {
     const { x1, x2, x3, x4, show, y } = this.state;
     return (
       <>
-        <Card>
+        <Card style={{ borderColor: 'green', borderWidth: '4px' }}>
           <Card.Body>
             <Card.Title>Lakukan Peramalan Produksi</Card.Title>
             <i>
@@ -104,7 +104,7 @@ export default class InputRamal extends Component {
                 type="submit"
                 block
                 size="lg"
-                style={{ marginTop: '30px' }}
+                style={{ marginTop: '30px', backgroundColor: 'green' }}
               >
                 Ramal
               </Button>
@@ -112,7 +112,14 @@ export default class InputRamal extends Component {
           </Card.Body>
         </Card>
         {show && (
-          <Card style={{ textAlign: 'center', margin: '40px 0' }}>
+          <Card
+            style={{
+              textAlign: 'center',
+              margin: '40px 0',
+              borderColor: 'green',
+              borderWidth: '4px'
+            }}
+          >
             <Card.Body>
               <h4>Hasil Ramal Produksi Kelapa Sawit</h4>
               {math.round(y, 4)} Ton

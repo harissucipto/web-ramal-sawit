@@ -20,7 +20,7 @@ export default class DataPeramalanPage extends Component {
       <Container fluid>
         <Row className="mt-5">
           <Col xs="12" md="3">
-            <Card>
+            <Card style={{ borderColor: 'green', borderWidth: '4px' }}>
               <Card.Img variant="top" src={ramal} />
               <Card.Body>
                 <Card.Title>Peramalan Produksi</Card.Title>

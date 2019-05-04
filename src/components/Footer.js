@@ -11,7 +11,8 @@ export default class Footer extends Component {
         {data =>
           data.state.uid ? (
             <Navbar
-              bg="dark"
+              variant="dark"
+              style={{ backgroundColor: 'green', paddingTop: '10px' }}
               className="justify-content-center"
               sticky="bottom"
             >

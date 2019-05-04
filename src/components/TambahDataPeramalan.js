@@ -70,7 +70,11 @@ class TambahDataPeramalan extends React.Component {
   render() {
     return (
       <>
-        <Button variant="primary" onClick={this.handleShow}>
+        <Button
+          variant="primary"
+          style={{ backgroundColor: 'green' }}
+          onClick={this.handleShow}
+        >
           Tambah Data
         </Button>
 

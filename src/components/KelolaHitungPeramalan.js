@@ -25,9 +25,9 @@ export default class KelolaHitungPeramalan extends Component {
       <>
         <Row>
           <Col>
-            <Card>
+            <Card style={{ borderColor: 'green', borderWidth: '4px' }}>
               <Card.Body>
-                <Card.Title className="text-center" style={{ color: 'blue' }}>
+                <Card.Title className="text-center" style={{ color: 'green' }}>
                   Rumus Prediksi Peramalan yang digunakan
                 </Card.Title>
                 <Card.Text className="text-center">

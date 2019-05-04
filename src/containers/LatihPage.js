@@ -21,7 +21,7 @@ export default class LatihPage extends Component {
       <Container fluid>
         <Row className="mt-5">
           <Col xs="12" lg="3">
-            <Card>
+            <Card style={{ borderColor: 'green', borderWidth: '4px' }}>
               <Card.Img variant="top" src={latih} />
               <Card.Body>
                 <Card.Title>Latih Model Peramalan</Card.Title>
@@ -46,16 +46,20 @@ export default class LatihPage extends Component {
             </Card>
           </Col>
           <Col xs="12" lg="9">
-            <h3 className="text-center">Data Perkebunan</h3>
-            <Subscribe to={[DataPeramalan, DataPengguna]}>
-              {(dataPeramalan, dataPengguna) => {
-                return dataPengguna.state.uid ? (
-                  <KelolaDataPeramalan {...dataPeramalan} />
-                ) : (
-                  <Redirect to={ROUTES.LOGIN} />
-                );
-              }}
-            </Subscribe>
+            <Card style={{ borderColor: 'green', borderWidth: '4px' }}>
+              <Card.Body>
+                <h3 className="text-center">Data Perkebunan</h3>
+                <Subscribe to={[DataPeramalan, DataPengguna]}>
+                  {(dataPeramalan, dataPengguna) => {
+                    return dataPengguna.state.uid ? (
+                      <KelolaDataPeramalan {...dataPeramalan} />
+                    ) : (
+                      <Redirect to={ROUTES.LOGIN} />
+                    );
+                  }}
+                </Subscribe>
+              </Card.Body>
+            </Card>
           </Col>
         </Row>
       </Container>
