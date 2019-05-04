@@ -6,7 +6,8 @@ const resetPengguna = {
   email: '',
   nomorTelepon: '',
   alamat: '',
-  password: ''
+  password: '',
+  erorText: ''
 };
 
 class DataPengguna extends Container {
@@ -16,6 +17,7 @@ class DataPengguna extends Container {
 
   login = (email, password) => {
     const correctEmail = email === 'admin@gmail.com';
+    this.setState({ erorText: '' });
     const correctPassword = password === '123';
     if (correctEmail && correctPassword) {
       this.setState({
@@ -24,7 +26,12 @@ class DataPengguna extends Container {
         email: 'admin@gmail.com',
         nomorTelepon: '08932034',
         alamat: 'JL SEI',
-        password: '123'
+        password: '123',
+        textEror: ''
+      });
+    } else {
+      this.setState({
+        erorText: 'Error Password atau Email Salah!'
       });
     }
   };

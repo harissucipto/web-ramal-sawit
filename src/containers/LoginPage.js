@@ -4,13 +4,13 @@ import Card from 'react-bootstrap/Card';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
+import Alert from 'react-bootstrap/Alert';
 import { Redirect } from 'react-router-dom';
 
 import { HOME } from '../constants/routes';
 import DataPengguna from './DataPengguna';
 import FormLogin from '../components/FormLogin';
 import perkebunan from '../img/perkebunan.jpg';
-import analisa from '../img/analisa.jpg';
 
 class ProsesData extends Component {
   render() {
@@ -30,7 +30,7 @@ class ProsesData extends Component {
           paddingTop: '10%'
         }}
       >
-        <Col md="4">
+        <Col md="3">
           <Card border>
             <Card.Body>
               <Row className="mb-3" noGutters>
@@ -39,7 +39,7 @@ class ProsesData extends Component {
                 </Col>
               </Row>
               <hr />
-              <FormLogin login={login} />
+              <FormLogin login={login} {...state} />
             </Card.Body>
           </Card>
         </Col>

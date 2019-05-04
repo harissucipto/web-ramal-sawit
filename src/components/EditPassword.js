@@ -76,9 +76,11 @@ export default class EditAkunPengguna extends Component {
 
     return (
       <form onSubmit={this.rubahPassword}>
-        <Row className="text-center">
-          {erorText && <Alert type="error">{erorText}</Alert>}
-        </Row>
+        {erorText && (
+          <Alert variant="danger" width="100%">
+            {erorText}
+          </Alert>
+        )}
 
         <Row className="mb-3">
           <Col md="4">Password Lama:</Col>

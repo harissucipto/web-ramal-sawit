@@ -13,8 +13,7 @@ const Input = styled.input`
 export default class FormLogin extends Component {
   state = {
     email: '',
-    password: '',
-    erorText: ''
+    password: ''
   };
 
   login = e => {
@@ -22,16 +21,20 @@ export default class FormLogin extends Component {
     const { email, password } = this.state;
 
     this.props.login(email, password);
+    this.setState({ email: '', password: '' });
   };
 
   render() {
-    const { email, password, erorText } = this.state;
+    const { email, password } = this.state;
+    const { erorText } = this.props;
 
     return (
       <form onSubmit={this.login}>
-        <Row className="text-center">
-          {erorText && <Alert type="error">{erorText}</Alert>}
-        </Row>
+        {erorText && (
+          <Alert variant="danger" width="100%">
+            Error! {erorText}
+          </Alert>
+        )}
 
         <Row className="mb-3">
           <Col md="4">Email:</Col>
