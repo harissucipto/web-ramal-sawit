@@ -14,6 +14,7 @@ import PeramalanPage from './containers/PeramalanPage';
 import AboutPage from './containers/AboutPage';
 import AkunPage from './containers/AkunPage';
 import SettingPage from './containers/SettingPage';
+import LoginPage from './containers/LoginPage';
 
 const App = () => {
   let dataPeramalan = new DataPeramalan();
@@ -23,6 +24,7 @@ const App = () => {
       <Router>
         <Layout>
           <Route exact path={ROUTES.HOME} component={HomePage} />
+          <Route path={ROUTES.LOGIN} component={LoginPage} />
           <Route path={ROUTES.LATIH} component={LatihPage} />
           <Route path={ROUTES.ANALISA} component={AnalisaPage} />
           <Route path={ROUTES.PERAMALAN} component={PeramalanPage} />

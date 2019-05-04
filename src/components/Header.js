@@ -3,11 +3,12 @@ import { withRouter } from 'react-router-dom';
 import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
 import NavDropdown from 'react-bootstrap/NavDropdown';
-import * as ROUTES from '../constants/routes';
 
+import * as ROUTES from '../constants/routes';
+import LogoutButton from './LogoutButton';
 import palm from '../img/icon-palm.png';
 
-const Header = ({ location, history }) => {
+const Header = ({ location, history, logout }) => {
   const pathname = location.pathname;
   return (
     <Navbar sticky="top" expand="md" bg="dark" variant="dark">
@@ -67,7 +68,8 @@ const Header = ({ location, history }) => {
               {' '}
               Setting
             </NavDropdown.Item>
-            <NavDropdown.Item href="#action/3.3">Logout</NavDropdown.Item>
+            <hr />
+            <LogoutButton logout={logout} />
           </NavDropdown>
           <Nav.Link
             active={pathname === ROUTES.ABOUT}

@@ -4,7 +4,7 @@ import Card from 'react-bootstrap/Card';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import { withRouter } from 'react-router-dom';
+import { withRouter, Redirect } from 'react-router-dom';
 import Button from 'react-bootstrap/Button';
 
 import DataPengguna from './DataPengguna';
@@ -22,10 +22,10 @@ const EditButton = withRouter(({ history }) => (
 
 class ProsesData extends Component {
   render() {
-    const { state } = this.props;
+    const { state, logout } = this.props;
     const { uid, email, nama, nomorTelepon, alamat } = state;
 
-    if (!uid.length) return <p>Silahkan Login...</p>;
+    if (!uid.length) return <Redirect to="/" />;
 
     return (
       <Row className="mt-5 justify-content-center">
@@ -38,7 +38,9 @@ class ProsesData extends Component {
                 </Col>
                 <Col md="4">
                   <EditButton />
-                  <Button variant="danger">Logout</Button>
+                  <Button variant="danger" onClick={logout}>
+                    Logout
+                  </Button>
                 </Col>
               </Row>
               <hr />

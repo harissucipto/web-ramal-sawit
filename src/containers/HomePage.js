@@ -1,17 +1,26 @@
-import React from 'react';
+import React, { Component } from 'react';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import * as ROUTES from '../constants/routes';
+import { Subscribe } from 'unstated';
+import { Redirect } from 'react-router-dom';
 
+import * as ROUTES from '../constants/routes';
+import DataPengguna from './DataPengguna';
 import latih from '../img/latih.png';
 import analisa from '../img/analisa.jpg';
 import ramal from '../img/ramal.jpg';
 import doc from '../img/doc.png';
 import MenuItem from '../components/MenuItem';
 
-class HomePage extends React.Component {
+class ProsesData extends Component {
   render() {
+    const {
+      state: { uid }
+    } = this.props;
+
+    if (!uid) return <Redirect to={ROUTES.LOGIN} />;
+
     return (
       <Container fluid>
         <Row className="mt-5 pr-5 pl-5">
@@ -69,6 +78,16 @@ class HomePage extends React.Component {
           </Col>
         </Row>
       </Container>
+    );
+  }
+}
+
+class HomePage extends React.Component {
+  render() {
+    return (
+      <Subscribe to={[DataPengguna]}>
+        {data => <ProsesData {...data} />}
+      </Subscribe>
     );
   }
 }

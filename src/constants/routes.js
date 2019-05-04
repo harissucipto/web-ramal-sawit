@@ -5,3 +5,4 @@ export const ANALISA = '/analisa-model';
 export const ABOUT = '/about';
 export const AKUN = '/akun';
 export const SETTING = '/setting';
+export const LOGIN = '/login';

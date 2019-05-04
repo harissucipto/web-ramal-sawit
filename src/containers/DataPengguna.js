@@ -1,5 +1,4 @@
 import { Container } from 'unstated';
-import { th } from 'date-fns/esm/locale';
 
 const resetPengguna = {
   uid: '',
@@ -12,15 +11,23 @@ const resetPengguna = {
 
 class DataPengguna extends Container {
   state = {
-    uid: '3232',
-    nama: 'SAHPUTRA',
-    email: 'SAHPUTRA@GMAIL.COM',
-    nomorTelepon: '08932034',
-    alamat: 'JL SEI',
-    password: '123'
+    ...resetPengguna
   };
 
-  login = (email, password) => {};
+  login = (email, password) => {
+    const correctEmail = email === 'admin@gmail.com';
+    const correctPassword = password === '123';
+    if (correctEmail && correctPassword) {
+      this.setState({
+        uid: '3232',
+        nama: 'SAHPUTRA',
+        email: 'admin@gmail.com',
+        nomorTelepon: '08932034',
+        alamat: 'JL SEI',
+        password: '123'
+      });
+    }
+  };
 
   updateAkun = data => {
     console.log(data, 'ini data');
