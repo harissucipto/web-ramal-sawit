@@ -11,11 +11,11 @@ import * as NAMA from '../constants/namaData';
 class TambahDataPeramalan extends React.Component {
   state = {
     show: false,
-    x1: '',
-    x2: '',
-    x3: '',
-    x4: '',
-    y: '',
+    x1: 0,
+    x2: 0,
+    x3: 0,
+    x4: 0,
+    y: 0,
     error: ''
   };
 
@@ -115,6 +115,7 @@ class TambahDataPeramalan extends React.Component {
               <Col xs="8">
                 <label name="produksi" style={{ width: '100%' }}>
                   <input
+                    type="number"
                     required
                     value={this.state.y}
                     onChange={e => this.setState({ y: e.target.value })}
@@ -127,6 +128,7 @@ class TambahDataPeramalan extends React.Component {
               <Col xs="8">
                 <label name="x1">
                   <input
+                    type="number"
                     required
                     value={this.state.x1}
                     onChange={e => this.setState({ x1: e.target.value })}
@@ -139,6 +141,7 @@ class TambahDataPeramalan extends React.Component {
               <Col xs="8">
                 <label name="x2">
                   <input
+                    type="number"
                     required
                     value={this.state.x2}
                     onChange={e => this.setState({ x2: e.target.value })}
@@ -151,6 +154,7 @@ class TambahDataPeramalan extends React.Component {
               <Col xs="8">
                 <label name="x3">
                   <input
+                    type="number"
                     required
                     value={this.state.x3}
                     onChange={e => this.setState({ x3: e.target.value })}
@@ -163,6 +167,7 @@ class TambahDataPeramalan extends React.Component {
               <Col xs="8">
                 <label name="x4">
                   <input
+                    type="number"
                     required
                     value={this.state.x4}
                     onChange={e => this.setState({ x4: e.target.value })}

@@ -13,11 +13,11 @@ import * as NAMA from '../constants/namaData';
 class TambahDataPeramalan extends React.Component {
   state = {
     show: false,
-    x1: '',
-    x2: '',
-    x3: '',
-    x4: '',
-    y: '',
+    x1: 0,
+    x2: 0,
+    x3: 0,
+    x4: 0,
+    y: 0,
     tanggal: moment(),
     error: ''
   };
@@ -125,6 +125,7 @@ class TambahDataPeramalan extends React.Component {
               <Col xs="8">
                 <label name="produksi" style={{ width: '100%' }}>
                   <input
+                    type="number"
                     style={{ paddingLeft: '10px' }}
                     required
                     value={this.state.y}
@@ -138,6 +139,7 @@ class TambahDataPeramalan extends React.Component {
               <Col xs="8">
                 <label name="x1">
                   <input
+                    type="number"
                     style={{ paddingLeft: '10px' }}
                     required
                     value={this.state.x1}
@@ -151,6 +153,7 @@ class TambahDataPeramalan extends React.Component {
               <Col xs="8">
                 <label name="x2">
                   <input
+                    type="number"
                     style={{ paddingLeft: '10px' }}
                     required
                     value={this.state.x2}
@@ -164,6 +167,7 @@ class TambahDataPeramalan extends React.Component {
               <Col xs="8">
                 <label name="x3">
                   <input
+                    type="number"
                     style={{ paddingLeft: '10px' }}
                     required
                     value={this.state.x3}
@@ -177,6 +181,7 @@ class TambahDataPeramalan extends React.Component {
               <Col xs="8">
                 <label name="x4">
                   <input
+                    type="number"
                     style={{ paddingLeft: '10px' }}
                     required
                     value={this.state.x4}
