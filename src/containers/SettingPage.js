@@ -18,9 +18,9 @@ class ProsesData extends Component {
 
     if (!state.uid) return <Redirect to={ROUTES.LOGIN} />;
     return (
-      <Row className="mt-5 justify-content-center">
+      <Row className="mt-5 mb-5 justify-content-center">
         <Col md="8">
-          <Card border>
+          <Card border style={{ borderColor: 'green', borderWidth: '4px' }}>
             <Card.Body>
               <Row className="mb-3">
                 <Col md="8">
@@ -31,7 +31,11 @@ class ProsesData extends Component {
               <FormEditAkun {...state} updateAkun={updateAkun} />
             </Card.Body>
           </Card>
-          <Card className="mt-5" border>
+          <Card
+            className="mt-5"
+            border
+            style={{ borderColor: 'green', borderWidth: '4px' }}
+          >
             <Card.Body>
               <Row className="mb-3">
                 <Col md="8">

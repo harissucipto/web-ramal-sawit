@@ -71,6 +71,7 @@ class TambahDataPeramalan extends React.Component {
     return (
       <>
         <Button
+          size="lg"
           variant="primary"
           style={{ backgroundColor: 'green' }}
           onClick={this.handleShow}
@@ -78,9 +79,19 @@ class TambahDataPeramalan extends React.Component {
           Tambah Data
         </Button>
 
-        <Modal show={this.state.show} onHide={this.tutup} size="lg">
-          <Modal.Header closeButton>
-            <Modal.Title>Tambah Data Training</Modal.Title>
+        <Modal show={this.state.show} onHide={this.tutup}>
+          <Modal.Header
+            closeButton
+            className=" mb-3"
+            style={{
+              backgroundColor: 'green',
+              padding: '10px',
+              color: 'white'
+            }}
+          >
+            <Modal.Title>
+              <h4>Tambah Data Training</h4>
+            </Modal.Title>
           </Modal.Header>
           <Modal.Body>
             {this.state.error && (
@@ -99,7 +110,7 @@ class TambahDataPeramalan extends React.Component {
                 <label name="tanggal" style={{ width: '100%' }}>
                   <InputDate
                     required
-                    style={{ width: '80px' }}
+                    style={{ paddingLeft: '10px' }}
                     format="dd-MM-yyyy"
                     value={this.state.tanggal.toDate()}
                     onChange={tanggal =>
@@ -114,6 +125,7 @@ class TambahDataPeramalan extends React.Component {
               <Col xs="8">
                 <label name="produksi" style={{ width: '100%' }}>
                   <input
+                    style={{ paddingLeft: '10px' }}
                     required
                     value={this.state.y}
                     onChange={e => this.setState({ y: e.target.value })}
@@ -126,6 +138,7 @@ class TambahDataPeramalan extends React.Component {
               <Col xs="8">
                 <label name="x1">
                   <input
+                    style={{ paddingLeft: '10px' }}
                     required
                     value={this.state.x1}
                     onChange={e => this.setState({ x1: e.target.value })}
@@ -138,6 +151,7 @@ class TambahDataPeramalan extends React.Component {
               <Col xs="8">
                 <label name="x2">
                   <input
+                    style={{ paddingLeft: '10px' }}
                     required
                     value={this.state.x2}
                     onChange={e => this.setState({ x2: e.target.value })}
@@ -150,6 +164,7 @@ class TambahDataPeramalan extends React.Component {
               <Col xs="8">
                 <label name="x3">
                   <input
+                    style={{ paddingLeft: '10px' }}
                     required
                     value={this.state.x3}
                     onChange={e => this.setState({ x3: e.target.value })}
@@ -162,6 +177,7 @@ class TambahDataPeramalan extends React.Component {
               <Col xs="8">
                 <label name="x4">
                   <input
+                    style={{ paddingLeft: '10px' }}
                     required
                     value={this.state.x4}
                     onChange={e => this.setState({ x4: e.target.value })}
@@ -174,7 +190,14 @@ class TambahDataPeramalan extends React.Component {
             <Button variant="secondary" onClick={this.tutup}>
               Batal
             </Button>
-            <Button variant="primary" onClick={this.handleClose}>
+            <Button
+              style={{
+                backgroundColor: 'green',
+
+                color: 'white'
+              }}
+              onClick={this.handleClose}
+            >
               Simpan Data
             </Button>
           </Modal.Footer>

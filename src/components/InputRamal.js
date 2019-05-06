@@ -10,6 +10,7 @@ import * as Nama from '../constants/namaData';
 
 const Input = styled.input`
   width: 100%;
+  padding-left: '10px';
 `;
 
 export default class InputRamal extends Component {

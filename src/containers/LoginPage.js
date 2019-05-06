@@ -12,6 +12,8 @@ import DataPengguna from './DataPengguna';
 import FormLogin from '../components/FormLogin';
 import perkebunan from '../img/perkebunan.jpg';
 
+import palm from '../img/icon-palm.png';
+
 class ProsesData extends Component {
   render() {
     const { state, login } = this.props;
@@ -33,8 +35,22 @@ class ProsesData extends Component {
         <Col md="3">
           <Card border>
             <Card.Body>
-              <div className="text-center mb-3">
-                <h5>Login SISKAWIT</h5>
+              <div
+                className="text-center mb-3"
+                style={{
+                  backgroundColor: 'green',
+                  padding: '10px',
+                  color: 'white'
+                }}
+              >
+                <img
+                  src={palm}
+                  width="30"
+                  height="30"
+                  className="d-inline-block align-top mb-2 mt-3"
+                  alt="React Bootstrap logo"
+                />
+                <h5>SISKAWIT</h5>
               </div>
 
               <hr />

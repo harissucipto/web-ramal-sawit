@@ -67,7 +67,7 @@ export default class FormLogin extends Component {
 
         <Row className="mt-5">
           <Col>
-            <Button block type="submit">
+            <Button block type="submit" style={{ backgroundColor: 'green' }}>
               Login
             </Button>
           </Col>

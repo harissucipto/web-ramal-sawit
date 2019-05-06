@@ -14,6 +14,10 @@ const EditButton = withRouter(({ history }) => (
   <Button
     className="mr-2"
     variant="warning"
+    style={{
+      backgroundColor: 'green',
+      color: 'white'
+    }}
     onClick={() => history.push(SETTING)}
   >
     Edit
@@ -30,7 +34,7 @@ class ProsesData extends Component {
     return (
       <Row className="mt-5 justify-content-center">
         <Col md="8">
-          <Card border>
+          <Card border style={{ borderColor: 'green', borderWidth: '4px' }}>
             <Card.Body>
               <Row>
                 <Col md="8">

@@ -73,8 +73,16 @@ class TambahDataPeramalan extends React.Component {
         </Button>
 
         <Modal show={this.state.show} onHide={this.tutup}>
-          <Modal.Header closeButton>
-            <Modal.Title>Edit Data Training {this.state.id} </Modal.Title>
+          <Modal.Header
+            closeButton
+            className=" mb-3"
+            style={{
+              backgroundColor: 'green',
+              padding: '10px',
+              color: 'white'
+            }}
+          >
+            <Modal.Title>Edit Data </Modal.Title>
           </Modal.Header>
           <Modal.Body>
             {this.state.error && (
@@ -93,7 +101,6 @@ class TambahDataPeramalan extends React.Component {
                 <label name="tanggal" style={{ width: '100%' }}>
                   <InputDate
                     required
-                    style={{ width: '80px' }}
                     format="dd-MM-yyyy"
                     value={this.state.tanggal.toDate()}
                     onChange={tanggal =>
@@ -168,7 +175,14 @@ class TambahDataPeramalan extends React.Component {
             <Button variant="secondary" onClick={this.tutup}>
               Batal
             </Button>
-            <Button variant="primary" onClick={this.handleClose}>
+            <Button
+              style={{
+                backgroundColor: 'green',
+
+                color: 'white'
+              }}
+              onClick={this.handleClose}
+            >
               Simpan Data
             </Button>
           </Modal.Footer>

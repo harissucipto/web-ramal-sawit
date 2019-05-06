@@ -19,7 +19,7 @@ export default class LatihPage extends Component {
   render() {
     return (
       <Container fluid>
-        <Row className="mt-5">
+        <Row className="mt-5 mb-5">
           <Col xs="12" lg="3">
             <Card style={{ borderColor: 'green', borderWidth: '4px' }}>
               <Card.Img variant="top" src={latih} />
