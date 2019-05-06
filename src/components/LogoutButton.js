@@ -6,7 +6,7 @@ import NavDropdown from 'react-bootstrap/NavDropdown';
 
 const ProsesData = ({ logout }) => (
   <NavDropdown.Item onClick={logout}>
-    <h5>logout</h5>
+    <span style={{ color: 'red' }}>logout</span>
   </NavDropdown.Item>
 );
 

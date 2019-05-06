@@ -22,12 +22,14 @@ export default class PetunjukPage extends Component {
             <h2 className="mb-5">Tentang Aplikasi SISKAWIT</h2>
             <img src={putra} alt="putra" height="50%" />
             <div className="mt-5">
-              Aplikasi SISKAWIT merupakan aplikasi peramalan kepala sawit pada
-              perkebunan di, yang dikembangkan oleh <b>Sahputra</b> NIM
-              (150000), jurusan ilmu komputer FMIPA Universitass Riau yang
-              digunakan untuk melakukan peramalan produksi sawit dengan
-              menggunakn metode multiple regresi linear sebagai syarat untuk
-              menyelesaikan perkuliahan sarjana starta 1.
+              <h4>
+                Aplikasi SISKAWIT merupakan aplikasi peramalan kelapa sawit pada
+                PT. Perkebunan Nusantara V cabang Kebun Sei Buatan, yang dibuat
+                oleh <b>Sahputra</b> NIM (1503113254) jurusan ilmu komputer
+                FMIPA Universitas Riau yang digunakan untuk melakukan peramalan
+                produksi sawit dengan menggunakan metode multiple regresion
+                sebagai syarat untuk menyelesaikan perkuliahan sarjana strata 1.
+              </h4>
             </div>
           </Col>
         </Row>

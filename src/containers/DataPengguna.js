@@ -12,14 +12,14 @@ const resetPengguna = {
 
 class DataPengguna extends Container {
   state = {
-    ...resetPengguna
-    // uid: '3232',
-    // nama: 'SAHPUTRA',
-    // email: 'admin@gmail.com',
-    // nomorTelepon: '08932034',
-    // alamat: 'JL SEI',
-    // password: '123',
-    // textEror: ''
+    // ...resetPengguna
+    uid: '3232',
+    nama: 'SAHPUTRA',
+    email: 'admin@gmail.com',
+    nomorTelepon: '08932034',
+    alamat: 'JL SEI',
+    password: '123',
+    textEror: ''
   };
 
   login = (email, password) => {

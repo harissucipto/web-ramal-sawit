@@ -7,7 +7,6 @@ import Card from 'react-bootstrap/Card';
 import { Link, Redirect } from 'react-router-dom';
 
 import * as ROUTES from '../constants/routes';
-import * as NAMA from '../constants/namaData';
 
 import latih from '../img/latih.png';
 
@@ -27,13 +26,10 @@ export default class LatihPage extends Component {
                 <Card.Title>Latih Model Peramalan</Card.Title>
                 <Card.Text className="text-justify">
                   <span style={{ display: 'block', marginBottom: '5px' }}>
-                    Data yang terjadi di lapangan berupa produksi kelapa sawit
-                    yang dihaslkan oleh perkebunan berdasarkan faktor{' '}
-                    {NAMA.textX.map((item, i) => (
-                      <span key={i}>{item}, </span>
-                    ))}
-                    digunakan oleh sistem untuk membuat model peramalan produksi
-                    kelapa sawit. Sehingga sistem sangat bergantung dengan data
+                    Masukkan data anda untuk melatih sistem dalam melakukan
+                    peramalan produksi kelapa sawit berupa produksi perkebunan
+                    dan faktor Curah Hujan, Jumlah Pupuk, Jarak Tanam
+                    dan Ketinggian Tempat. Sistem sangat bergantung dengan data
                     asli yang anda masukan agar dapat melakukan peramalan dengan
                     akurat.
                   </span>
