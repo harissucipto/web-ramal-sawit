@@ -16,7 +16,7 @@ export default class Footer extends Component {
               className="justify-content-center"
               sticky="bottom"
             >
-              <p className="text-white">Copyright - SAHPURTRA - 2019</p>
+              <p className="text-white">Developed by Sahputra - 2019</p>
             </Navbar>
           ) : null
         }
