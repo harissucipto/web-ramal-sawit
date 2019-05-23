@@ -26,11 +26,11 @@ class ProsesData extends Component {
         <Row className="mt-5 pr-5 pl-5">
           <Col>
             <h4 className="text-center mt-5">
-              SISKAWIT merupakan aplikasi yang digunakan untuk melakukan
-              peramalan produksi kelapa sawit dengan menggunakan metode regresi
-              linear berganda berdasarkan 4 faktor diantarnya pupuk, curah
-              hujan, jarak tanam dan ketinggian tempat pada perkebunan kelapa
-              sawit.
+              Sistem Peramalan Kelapa Sawit merupakan aplikasi yang digunakan
+              untuk melakukan peramalan produksi kelapa sawit dengan menggunakan
+              metode regresi linear berganda berdasarkan 4 faktor diantarnya
+              pupuk, curah hujan, jarak tanam dan ketinggian tempat pada
+              perkebunan kelapa sawit.
             </h4>
           </Col>
         </Row>

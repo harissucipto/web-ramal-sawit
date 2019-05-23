@@ -1,0 +1,125 @@
+// {type:class}
+// {direction:topDown}
+// [note: You can stick notes on diagrams too!{bg:cornsilk}]
+// [Customer]<>1-orders 0..*>[Order]
+// [Order]++*-*>[LineItem]
+// [Order]-1>[DeliveryMethod]
+// [Order]*-*>[Product|EAN_Code|promo_price()]
+// [Category]<->[Product]
+// [DeliveryMethod]^[National]
+// [DeliveryMethod]^[International]
+
+
+[App | render()]
+// halaman
+[HomePage | render()  ]
+[LoginPage| render()]
+[LatihPage | render()]
+[AnalisaPage | render()]
+[PeramalanPage | render()]
+[AboutPage | render()]
+[AkunPage | render()]
+[SettingPage | render()]
+// penyimpanan global
+[DataPeramalan | data;loading;model;r2 | fetch();tambahData();hapusData();editData();modelData();koefesienKorelasiAB();koefesisenDeterminasi();]
+[DataPengguna | uid;nama;email;nomorTelepon;alamat;password;textError; | login();updateAkun();updatePassword();logout()]
+//  Component
+[EditAkunPengguna | email;nama;nomorTelepon;alamat; | componentWillMount();editAkun();render();]
+[EditDataPeramalan | show;x1;x2;x3;x4;y;error; | componentWillMount();handleClose();handleShow();tutup();editData();saveState();render();]
+[EditPassword | passwordLama;tempPasswordLama;passwordBaru;ulangiPasswordBaru;errorText;]
+[Footer || render();]
+[FormLogin | email;password; | login();render();]
+[GrafikData || render();]
+[GrafikDeterminasi || render();]
+[GrafikKorelasiX1 || render();]
+[GrafikKorelasiX2 || render();]
+[GrafikKorelasiX3 || render(); ]
+[GrafikKorelasiX4 || render(); ]
+[HapusDataPeramalan | show;x1;x2;x3;x4;y;error; | handleClose();handleShow();tutup();render();]
+[Header || render(); ]
+[InputRamal |  x1;x2;x3;x4;y;show; | ramal();render(); ]
+[KelolaDataPeramalan || render(); ]
+[KelolaGrafikPeramalan || render();]
+[KelolaHitungPeramalan || componentWillMount();render();]
+[Layout || render();]
+[LogoutButton || render(); ]
+[MenuItem || render();]
+[Persamaan || render();]
+[TableDataPeramalan || render();]
+[TableDataPerkebunanAnalisa || render();]
+[TableKorelasiVariable || render();]
+[TablePersamaan || render();]
+[TambahDataPeramalan | show;x1;x2;x3;x4;y;tanggal;error;| handleClose();tutup();tambahBaru();handleShow();render(); ]
+
+
+
+[App]->[DataPeramalan]
+[App]->[DataPengguna]
+[App]->[LoginPage]
+[App]->[HomePage]
+[App]->[LatihPage]
+[App]->[AnalisaPage]
+[App]->[PeramalanPage]
+[App]->[AboutPage]
+[App]->[AkunPage]
+[App]->[SettingPage]
+
+
+
+// relasi HomePage
+[HomePage]->[MenuItem]
+[HomePage]->[DataPengguna]
+
+
+// relasi LatihPage
+[LatihPage]->[KelolaDataPeramalan]
+
+
+// relasi AnalisaPage
+[AnalisaPage]->[TablePersamaan]
+[AnalisaPage]->[TableKorelasiVariable]
+[AnalisaPage]->[TableDataPerkebunanAnalisa]
+[AnalisaPage]->[KelolaGrafikPeramalan]
+
+// relasi PeramalanPage
+[PeramalanPage]->[KelolaHitungPeramalan]
+
+// relasi LoginPage
+[LoginPage]->[FormLogin]
+
+
+// relasi SettingPage
+[SettingPage]->[EditAkunPengguna]
+[SettingPage]->[EditPassword]
+
+
+
+
+// relasi Layout
+[App]->[Layout]
+[Layout]->[Header]
+[Layout]->[Footer]
+
+// relasi Header
+[Header]->[LogoutButton]
+
+// relasi KelolaDataPeramalan
+[KelolaDataPeramalan]->[TambahDataPeramalan]
+[KelolaDataPeramalan]->[TableDataPeramalan]
+
+// relasi KelolaGrafikPeramalan
+[KelolaGrafikPeramalan]->[GrafikData]
+[KelolaGrafikPeramalan]->[GrafikKorelasiX1]
+[KelolaGrafikPeramalan]->[GrafikKorelasiX2]
+[KelolaGrafikPeramalan]->[GrafikKorelasiX3]
+[KelolaGrafikPeramalan]->[GrafikKorelasiX4]
+[KelolaGrafikPeramalan]->[GrafikDeterminasi]
+
+
+// relasi KelolaHitungPeramalan
+[KelolaHitungPeramalan]->[Persamaan]
+[KelolaHitungPeramalan]->[InputRamal]
+
+// relasi TableDataPeramalan
+[TableDataPeramalan]->[HapusDataPeramalan]
+[TableDataPeramalan]->[EditDataPeramalan]

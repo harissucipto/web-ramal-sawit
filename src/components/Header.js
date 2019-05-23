@@ -33,7 +33,7 @@ const Header = ({ location, history, logout }) => {
                     className="d-inline-block align-top mr-3"
                     alt="React Bootstrap logo"
                   />
-                  <h3 className="mt-3">SISKAWIT</h3>
+                  <h3 className="mt-3">Sistem Peramalan Kelapa Sawit</h3>
                 </Navbar.Brand>
               </Col>
             </Row>
@@ -66,6 +66,12 @@ const Header = ({ location, history, logout }) => {
                         onClick={() => history.push(ROUTES.PERAMALAN)}
                       >
                         <h5>Peramalan Produksi</h5>
+                      </Nav.Link>
+                      <Nav.Link
+                        active={pathname === ROUTES.CETAK}
+                        onClick={() => history.push(ROUTES.CETAK)}
+                      >
+                        <h5>Cetak Laporan</h5>
                       </Nav.Link>
                       <Nav.Link
                         active={pathname === ROUTES.ABOUT}

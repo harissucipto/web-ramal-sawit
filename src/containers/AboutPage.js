@@ -10,7 +10,7 @@ import DataPengguna from './DataPengguna';
 
 import putra from '../img/putra.jpg';
 
-export default class PetunjukPage extends Component {
+export default class AboutPage extends Component {
   render() {
     return (
       <Container>

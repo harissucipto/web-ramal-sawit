@@ -107,7 +107,7 @@ class ProsesData extends Component {
   }
 }
 
-export default class DataPeramalanPage extends Component {
+export default class AnalisaPage extends Component {
   render() {
     return (
       <Subscribe to={[DataPeramalan, DataPengguna]}>

@@ -1,5 +1,6 @@
 import React from 'react';
 import Table from 'react-bootstrap/Table';
+import 'moment/locale/id';
 import Hapus from './HapusDataPeramalan';
 import Edit from './EditDataPeramalan';
 

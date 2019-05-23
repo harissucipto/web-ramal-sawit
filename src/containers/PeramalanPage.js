@@ -14,7 +14,7 @@ import DataPeramalan from './DataPeramalan';
 import DataPengguna from './DataPengguna';
 import KelolaHitungPeramalan from '../components/KelolaHitungPeramalan';
 
-export default class DataPeramalanPage extends Component {
+export default class PeramalanPage extends Component {
   render() {
     return (
       <Container fluid>

@@ -1,9 +1,13 @@
 import React, { Component } from 'react';
 import Table from 'react-bootstrap/Table';
 import math from 'mathjs';
+import moment from 'moment';
 import { totalArr } from '../utils/hitung';
+import 'moment/locale/id';
 
 import * as NAMA from '../constants/namaData';
+
+moment.locale('id');
 
 class TableDataPeramalan extends Component {
   render() {
@@ -29,7 +33,7 @@ class TableDataPeramalan extends Component {
       <Table striped bordered hover responsive>
         <thead>
           <tr>
-            <th>No</th>
+            <th>Bulan</th>
             <th>Tanggal</th>
             <th>Produksi (ton)</th>
             <th>{NAMA.textXsatuan[0]}</th>
@@ -44,7 +48,7 @@ class TableDataPeramalan extends Component {
         <tbody>
           {filterData.map((item, i) => (
             <tr key={item.id}>
-              <td>{i + 1}</td>
+              <td>{item.tanggal.format('MMMM')}</td>
               <td>{item.tanggal.format('DD-MM-YYYY')}</td>
               <td>{item.y}</td>
               <td>{item.x1}</td>

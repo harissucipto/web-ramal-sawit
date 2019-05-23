@@ -15,6 +15,10 @@ import AboutPage from './containers/AboutPage';
 import AkunPage from './containers/AkunPage';
 import SettingPage from './containers/SettingPage';
 import LoginPage from './containers/LoginPage';
+import CetakLaporanPage from './containers/CetakLaporanPage';
+
+// Router component untuk melakukan navigasi halaman
+// Provider component yang meletekan global
 
 const App = () => {
   let dataPeramalan = new DataPeramalan();
@@ -28,6 +32,7 @@ const App = () => {
           <Route path={ROUTES.LATIH} component={LatihPage} />
           <Route path={ROUTES.ANALISA} component={AnalisaPage} />
           <Route path={ROUTES.PERAMALAN} component={PeramalanPage} />
+          <Route path={ROUTES.CETAK} component={CetakLaporanPage} />
           <Route path={ROUTES.ABOUT} component={AboutPage} />
           <Route path={ROUTES.AKUN} component={AkunPage} />
           <Route path={ROUTES.SETTING} component={SettingPage} />

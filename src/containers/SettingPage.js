@@ -52,7 +52,7 @@ class ProsesData extends Component {
   }
 }
 
-export default class AkunPage extends Component {
+export default class SettingPage extends Component {
   render() {
     return (
       <Container>
