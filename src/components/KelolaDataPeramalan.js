@@ -4,8 +4,14 @@ import TableDataPeramalan from './TableDataPeramalan';
 import TambahData from './TambahDataPeramalan';
 
 export default class KelolaDataPeramalan extends Component {
+  componentDidMount() {
+    this.props.fetch();
+  }
+
   render() {
     const { state, tambahData, hapusData, editData } = this.props;
+
+    if (state.loading) return <p>Loading...</p>;
 
     return (
       <div>

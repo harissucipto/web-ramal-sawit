@@ -3,7 +3,10 @@ import shortid from 'shortid';
 import Data, { data } from '../data';
 import moment from 'moment';
 import math from 'mathjs';
+import _ from 'lodash';
+
 import { totalArr, arrPangkatDua, arrKaliArr } from '../utils/hitung';
+import { database } from '../data/config';
 
 class DataPeramalan extends Container {
   state = {
@@ -13,19 +16,25 @@ class DataPeramalan extends Container {
     r2: null
   };
 
-  fetch = () => {
-    const { x1, x2, x3, x4, y } = Data;
-    const data = x1.map((item, i) => ({
-      id: shortid(),
-      tanggal: moment(),
-      x1: x1[i],
-      x2: x2[i],
-      x3: x3[i],
-      x4: x4[i],
-      y: y[i]
-    }));
+  fetch = async () => {
+    this.setState({ loading: true });
+    const tempData = await database
+      .ref()
+      .child('dataPerkebunan')
+      .once('value')
+      .catch({ loading: false });
+    console.log(_.toArray(tempData.val()), 'n');
 
-    this.setState({ data });
+    const dataKeArray = _.toArray(tempData.val());
+    const bershikanData = dataKeArray.length
+      ? dataKeArray
+          .filter(item => item)
+          .map(item => ({ ...item, tanggal: moment(item.tanggal) }))
+      : [];
+
+    console.log(bershikanData, 'data bersih');
+
+    this.setState({ data: bershikanData, loading: false });
   };
 
   tambahData = baru => {

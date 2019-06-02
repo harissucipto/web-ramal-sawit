@@ -32,7 +32,7 @@ class ProsesData extends Component {
           paddingTop: '10%'
         }}
       >
-        <Col md="3">
+        <Col md="6" lg="4">
           <Card border>
             <Card.Body>
               <div

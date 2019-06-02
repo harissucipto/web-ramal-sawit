@@ -7,13 +7,20 @@ import { Redirect } from 'react-router-dom';
 
 import * as ROUTES from '../constants/routes';
 import DataPengguna from './DataPengguna';
+import DataPeramalan from './DataPeramalan';
+
 import latih from '../img/latih.png';
 import analisa from '../img/analisa.jpg';
 import ramal from '../img/ramal.jpg';
 import doc from '../img/doc.png';
 import MenuItem from '../components/MenuItem';
+import { data } from '../data';
 
 class ProsesData extends Component {
+  componentDidMount() {
+    this.props.dataPeramalan.fetch();
+  }
+
   render() {
     const {
       state: { uid }
@@ -84,8 +91,10 @@ class ProsesData extends Component {
 class HomePage extends React.Component {
   render() {
     return (
-      <Subscribe to={[DataPengguna]}>
-        {data => <ProsesData {...data} />}
+      <Subscribe to={[DataPengguna, DataPeramalan]}>
+        {(dataPengguna, dataPeramalan) => (
+          <ProsesData {...dataPengguna} dataPeramalan={dataPeramalan} />
+        )}
       </Subscribe>
     );
   }
