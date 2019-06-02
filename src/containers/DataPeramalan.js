@@ -8,6 +8,8 @@ import _ from 'lodash';
 import { totalArr, arrPangkatDua, arrKaliArr } from '../utils/hitung';
 import { database } from '../data/config';
 
+const Penyimpanan = database.ref().child('dataPerkebunan');
+
 class DataPeramalan extends Container {
   state = {
     data,
@@ -18,12 +20,7 @@ class DataPeramalan extends Container {
 
   fetch = async () => {
     this.setState({ loading: true });
-    const tempData = await database
-      .ref()
-      .child('dataPerkebunan')
-      .once('value')
-      .catch({ loading: false });
-    console.log(_.toArray(tempData.val()), 'n');
+    const tempData = await Penyimpanan.once('value').catch({ loading: false });
 
     const dataKeArray = _.toArray(tempData.val());
     const bershikanData = dataKeArray.length
@@ -32,29 +29,49 @@ class DataPeramalan extends Container {
           .map(item => ({ ...item, tanggal: moment(item.tanggal) }))
       : [];
 
-    console.log(bershikanData, 'data bersih');
-
     this.setState({ data: bershikanData, loading: false });
   };
 
-  tambahData = baru => {
-    console.log(baru, 'ini baru');
+  tambahData = async baru => {
+    this.setState({ loading: true });
+    await Penyimpanan.child(baru.id)
+      .set({
+        ...baru,
+        tanggal: baru.tanggal.toString()
+      })
+      .catch(err => this.setState({ loading: false }));
+
     this.setState({
-      data: [...this.state.data, baru]
+      data: [...this.state.data, baru],
+      loading: false
     });
   };
 
-  hapusData = id => {
-    console.log(id, 'ini id');
+  hapusData = async id => {
+    this.setState({ loading: true });
+    await Penyimpanan.child(id)
+      .remove()
+      .catch(err => this.setState({ loading: false }));
+
     this.setState({
-      data: this.state.data.filter(item => item.id !== id)
+      data: this.state.data.filter(item => item.id !== id),
+      loading: false
     });
   };
 
-  editData = newData => {
-    const data = this.state.data.filter(item => item.id !== newData.id);
+  editData = async baru => {
+    this.setState({ loading: true });
+    await Penyimpanan.child(baru.id)
+      .set({
+        ...baru,
+        tanggal: baru.tanggal.toString()
+      })
+      .catch(err => this.setState({ loading: false }));
+
+    const data = this.state.data.filter(item => item.id !== baru.id);
     this.setState({
-      data: [...data, newData]
+      data: [...data, baru],
+      loading: false
     });
   };
 
