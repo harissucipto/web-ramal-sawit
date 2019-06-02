@@ -1,6 +1,9 @@
 import React from 'react';
 import Modal from 'react-bootstrap/Modal';
 import Button from 'react-bootstrap/Button';
+import 'moment/locale/id';
+
+import * as NAMA from '../constants/namaData';
 
 class TambahDataPeramalan extends React.Component {
   state = {
@@ -27,7 +30,7 @@ class TambahDataPeramalan extends React.Component {
   };
 
   render() {
-    const { id } = this.props;
+    const { id, tanggal, x1, x2, x3, x4, y } = this.props.item;
     return (
       <>
         <Button variant="danger" onClick={this.handleShow}>
@@ -38,7 +41,24 @@ class TambahDataPeramalan extends React.Component {
           <Modal.Header closeButton>
             <Modal.Title>Hapus Data</Modal.Title>
           </Modal.Header>
-          <Modal.Body>ID: {id}</Modal.Body>
+          <Modal.Body>
+            <ul>
+              <li>Tanggal: {tanggal.format('DD-MM-YYYY')}</li>
+              <li>Produksi: {y} ton</li>
+              <li>
+                {NAMA.textX[0]} : {x1}
+              </li>
+              <li>
+                {NAMA.textX[1]} : {x2}
+              </li>
+              <li>
+                {NAMA.textX[2]} : {x3}
+              </li>
+              <li>
+                {NAMA.textX[3]} : {x4}
+              </li>
+            </ul>
+          </Modal.Body>
           <Modal.Footer>
             <Button variant="secondary" onClick={this.tutup}>
               Batal

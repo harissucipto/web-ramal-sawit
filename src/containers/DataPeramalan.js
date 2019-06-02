@@ -1,6 +1,4 @@
 import { Container } from 'unstated';
-import shortid from 'shortid';
-import Data, { data } from '../data';
 import moment from 'moment';
 import math from 'mathjs';
 import _ from 'lodash';
@@ -12,7 +10,7 @@ const Penyimpanan = database.ref().child('dataPerkebunan');
 
 class DataPeramalan extends Container {
   state = {
-    data,
+    data: [],
     loading: false,
     model: null,
     r2: null

@@ -37,7 +37,7 @@ const TableDataPeramalan = ({ data = [], onHapus, onEdit }) => {
             <td>{item.x3}</td>
             <td>{item.x4}</td>
             <th className="text-center">
-              <Hapus onHapus={onHapus} id={item.id} />
+              <Hapus onHapus={onHapus} id={item.id} item={item} />
 
               <Edit onEdit={onEdit} item={item} />
             </th>
