@@ -6,6 +6,7 @@
     "@react-pdf/renderer": "^1.6.0",
     "bootstrap": "^4.3.1",
     "chart.js": "^2.8.0",
+    "firebase": "^6.1.0",
     "mathjs": "^5.9.0",
     "moment": "^2.24.0",
     "react": "^16.8.6",

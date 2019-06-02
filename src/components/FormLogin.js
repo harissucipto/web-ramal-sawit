@@ -21,12 +21,11 @@ export default class FormLogin extends Component {
     const { email, password } = this.state;
 
     this.props.login(email, password);
-    this.setState({ email: '', password: '' });
   };
 
   render() {
     const { email, password } = this.state;
-    const { erorText } = this.props;
+    const { erorText, loading } = this.props;
 
     return (
       <form onSubmit={this.login}>
@@ -35,6 +34,7 @@ export default class FormLogin extends Component {
             Error! {erorText}
           </Alert>
         )}
+        {loading && <p>Loading...</p>}
 
         <Row className="mb-3">
           <Col md="4">Email:</Col>

@@ -22,7 +22,6 @@ class ProsesData extends Component {
   }
   render() {
     const { model, r2, data } = this.props.state;
-    const { koefesienKorelasiAB } = this.props;
 
     if (!data.length)
       return <p>Belum Ada Data, Tidak Bisa melakukan Analisa</p>;

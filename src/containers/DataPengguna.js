@@ -1,4 +1,5 @@
 import { Container } from 'unstated';
+import { auth } from '../data/config';
 
 const resetPengguna = {
   uid: '',
@@ -7,39 +8,38 @@ const resetPengguna = {
   nomorTelepon: '',
   alamat: '',
   password: '',
-  erorText: ''
+  erorText: '',
+  loading: false
 };
 
 class DataPengguna extends Container {
   state = {
-    // ...resetPengguna
-    uid: '3232',
-    nama: 'SAHPUTRA',
-    email: 'admin@gmail.com',
-    nomorTelepon: '08932034',
-    alamat: 'JL SEI',
-    password: '123',
-    textEror: ''
+    ...resetPengguna
+    // uid: '3232',
+    // nama: 'SAHPUTRA',
+    // email: 'admin@gmail.com',
+    // nomorTelepon: '08932034',
+    // alamat: 'JL SEI',
+    // password: '123',
+    // textEror: ''
   };
 
-  login = (email, password) => {
-    const correctEmail = email === 'admin@gmail.com';
-    this.setState({ erorText: '' });
-    const correctPassword = password === '123';
-    if (correctEmail && correctPassword) {
-      this.setState({
-        uid: '3232',
-        nama: 'SAHPUTRA',
-        email: 'admin@gmail.com',
-        nomorTelepon: '08932034',
-        alamat: 'JL SEI',
-        password: '123',
-        textEror: ''
-      });
-    } else {
-      this.setState({
-        erorText: 'Error Password atau Email Salah!'
-      });
+  login = async (email, password) => {
+    this.setState({ loading: true, erorText: '' });
+    const respon = await auth()
+      .signInWithEmailAndPassword(email, password)
+      .catch(e =>
+        this.setState({
+          erorText: 'Username atau Password Salah!',
+          loading: false
+        })
+      );
+
+    if (respon) {
+      this.setState({ erorText: '' });
+      const { email, uid } = respon.user;
+      console.log(email, uid, 'ini data user');
+      this.setState({ uid, email, loading: false });
     }
   };
 
@@ -53,7 +53,9 @@ class DataPengguna extends Container {
     this.setState({ password });
   };
 
-  logout = () => {
+  logout = async () => {
+    await auth().signOut();
+
     this.setState({
       ...resetPengguna
     });

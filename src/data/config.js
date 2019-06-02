@@ -1,3 +1,5 @@
+import firebase from 'firebase';
+
 const config = {
   apiKey: 'AIzaSyDPtF-qoGpqSANEw308x6kS2dHL0AjUuqU',
   authDomain: 'siskawit.firebaseapp.com',
@@ -7,4 +9,9 @@ const config = {
   messagingSenderId: '1085252310862'
 };
 
-export default config;
+firebase.initializeApp(config);
+
+export default firebase;
+
+export const auth = firebase.auth;
+export const database = firebase.database();
