@@ -1,5 +1,5 @@
 import { Container } from 'unstated';
-import { auth } from '../data/config';
+import { auth, database } from '../data/config';
 
 const resetPengguna = {
   uid: '',
@@ -41,6 +41,27 @@ class DataPengguna extends Container {
       console.log(email, uid, 'ini data user');
       this.setState({ uid, email, loading: false });
     }
+  };
+
+  getDataAkun = async () => {
+    console.log(this.state.uid, 'ini uidnya');
+    if (!this.state.uid) return;
+
+    this.setState({ loading: true });
+
+    const user = await database
+      .ref(`akun/${this.state.uid}`)
+      .once('value')
+      .catch({ loading: false });
+
+    const { alamat, nomorTelepon, nama } = user.val();
+
+    this.setState({
+      loading: false,
+      nama,
+      nomorTelepon,
+      alamat
+    });
   };
 
   updateAkun = data => {

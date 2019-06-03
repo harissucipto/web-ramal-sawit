@@ -12,8 +12,8 @@ const Input = styled.input`
 
 export default class FormLogin extends Component {
   state = {
-    email: '',
-    password: ''
+    email: 'putra@gmail.com',
+    password: 'putra123'
   };
 
   login = e => {

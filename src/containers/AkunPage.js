@@ -25,11 +25,17 @@ const EditButton = withRouter(({ history }) => (
 ));
 
 class ProsesData extends Component {
+  componentDidMount() {
+    this.props.getDataAkun();
+  }
+
   render() {
     const { state, logout } = this.props;
-    const { uid, email, nama, nomorTelepon, alamat } = state;
+    const { uid, email, nama, nomorTelepon, alamat, loading } = state;
 
     if (!uid.length) return <Redirect to="/" />;
+
+    if (loading) return <p>Loading....</p>;
 
     return (
       <Row className="mt-5 justify-content-center">
