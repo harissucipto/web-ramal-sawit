@@ -1,5 +1,6 @@
 import { Container } from 'unstated';
 import { auth, database } from '../data/config';
+import firebase from 'firebase';
 
 const resetPengguna = {
   uid: '',
@@ -9,7 +10,10 @@ const resetPengguna = {
   alamat: '',
   password: '',
   erorText: '',
-  loading: false
+  erorPassword: '',
+  erorAkun: '',
+  loading: false,
+  loadingAkun: false
 };
 
 class DataPengguna extends Container {
@@ -39,7 +43,7 @@ class DataPengguna extends Container {
       this.setState({ erorText: '' });
       const { email, uid } = respon.user;
       console.log(email, uid, 'ini data user');
-      this.setState({ uid, email, loading: false });
+      this.setState({ uid, email, password, loading: false });
     }
   };
 
@@ -64,14 +68,43 @@ class DataPengguna extends Container {
     });
   };
 
-  updateAkun = data => {
+  updateAkun = async data => {
+    this.setState({ loadingAkun: true });
     console.log(data, 'ini data');
-    this.setState({ ...data });
+    await database
+      .ref(`akun/${this.state.uid}`)
+      .set({
+        nama: data.nama,
+        nomorTelepon: data.nomorTelepon,
+        alamat: data.alamat
+      })
+      .catch({ loadingAkun: false });
+
+    const user = firebase.auth().currentUser;
+
+    await user.updateEmail(data.email).catch(e =>
+      this.setState({
+        erorAkun:
+          'Tidak bisa memakai email tersebut silahkan pakai email lainnya'
+      })
+    );
+
+    this.setState({ ...data, loadingAkun: false });
   };
 
-  updatePassword = password => {
-    console.log('update', password);
-    this.setState({ password });
+  updatePassword = async password => {
+    this.setState({ loadng: true });
+
+    const user = firebase.auth().currentUser;
+
+    await user.updatePassword(password).catch(e =>
+      this.setState({
+        loading: false,
+        erorPassword: 'Error tidak bisa mengupdate password mu!'
+      })
+    );
+
+    this.setState({ password, loading: false });
   };
 
   logout = async () => {

@@ -12,11 +12,17 @@ import FormEditAkun from '../components/EditAkunPengguna';
 import EditPassword from '../components/EditPassword';
 
 class ProsesData extends Component {
+  componentDidMount() {
+    this.props.getDataAkun();
+  }
+
   render() {
     const { state, updateAkun, updatePassword } = this.props;
     console.log(state, 'ini state');
 
     if (!state.uid) return <Redirect to={ROUTES.LOGIN} />;
+
+    if (state.loading) return <p>Loading...</p>;
     return (
       <Row className="mt-5 mb-5 justify-content-center">
         <Col md="8">

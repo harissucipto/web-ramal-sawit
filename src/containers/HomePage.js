@@ -14,7 +14,6 @@ import analisa from '../img/analisa.jpg';
 import ramal from '../img/ramal.jpg';
 import doc from '../img/doc.png';
 import MenuItem from '../components/MenuItem';
-import { data } from '../data';
 
 class ProsesData extends Component {
   componentDidMount() {

@@ -30,7 +30,7 @@ class TambahDataPeramalan extends React.Component {
   };
 
   render() {
-    const { id, tanggal, x1, x2, x3, x4, y } = this.props.item;
+    const { tanggal, x1, x2, x3, x4, y } = this.props.item;
     return (
       <>
         <Button variant="danger" onClick={this.handleShow}>

@@ -46,6 +46,16 @@ export default class EditAkunPengguna extends Component {
       return;
     }
 
+    if (passwordBaru.length < 6) {
+      this.setState({
+        erorText: 'Panjang Password Minimal harus 6 karakter!!',
+        tempPasswordLama: '',
+        passwordBaru: '',
+        ulangiPasswordBaru: ''
+      });
+      return;
+    }
+
     if (passwordBaru !== ulangiPasswordBaru) {
       this.setState({
         erorText: 'Ulangi Password Baru Harus Sama',
@@ -74,6 +84,8 @@ export default class EditAkunPengguna extends Component {
       erorText
     } = this.state;
 
+    const erorPassword = this.props.erorPassword;
+
     return (
       <form onSubmit={this.rubahPassword}>
         {erorText && (
@@ -81,6 +93,12 @@ export default class EditAkunPengguna extends Component {
             {erorText}
           </Alert>
         )}
+        {erorPassword && (
+          <Alert variant="danger" width="100%">
+            {erorPassword}
+          </Alert>
+        )}
+        {this.props.loading && <p>Loading...</p>}
 
         <Row className="mb-3">
           <Col md="4">Password Lama:</Col>

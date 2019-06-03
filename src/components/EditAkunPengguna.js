@@ -3,6 +3,7 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Button from 'react-bootstrap/Button';
 import styled from 'styled-components';
+import Alert from 'react-bootstrap/Alert';
 
 const Input = styled.input`
   width: 100%;
@@ -35,9 +36,18 @@ export default class EditAkunPengguna extends Component {
 
   render() {
     const { nama, email, nomorTelepon, alamat } = this.state;
+    const tampilanError = this.props.erorAkun;
+
+    console.log(tampilanError, 'ini props nya');
 
     return (
       <form onSubmit={this.editAkun}>
+        {tampilanError && (
+          <Alert variant="danger" width="100%">
+            {tampilanError}
+          </Alert>
+        )}
+        {this.props.loadingAkun && <p>Loading...</p>}
         <Row className="mb-3">
           <Col md="4">Email:</Col>
           <Col xs>
