@@ -68,16 +68,18 @@ class TableDataPeramalan extends Component {
 
             return null;
           })}
-          <tr>
-            <td colSpan="2">Jumlah</td>
-            <td>{totalArr(y)}</td>
-            <td>{totalArr(x1)}</td>
-            <td>{totalArr(x2)}</td>
-            <td>{totalArr(x3)}</td>
-            <td>{totalArr(x4)}</td>
-            <td>{math.round(totalArr(predict), 4)}</td>
-            <td>{math.round(totalArr(error), 4)}</td>
-          </tr>
+          {pilihan === 'Semua' && (
+            <tr>
+              <td colSpan="2">Jumlah</td>
+              <td>{totalArr(y)}</td>
+              <td>{totalArr(x1)}</td>
+              <td>{totalArr(x2)}</td>
+              <td>{totalArr(x3)}</td>
+              <td>{totalArr(x4)}</td>
+              <td>{math.round(totalArr(predict), 4)}</td>
+              <td>{math.round(totalArr(error), 4)}</td>
+            </tr>
+          )}
         </tbody>
       </Table>
     );
