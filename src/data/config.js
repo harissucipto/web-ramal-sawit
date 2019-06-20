@@ -1,12 +1,13 @@
 import firebase from 'firebase';
 
 const config = {
-  apiKey: 'AIzaSyDPtF-qoGpqSANEw308x6kS2dHL0AjUuqU',
-  authDomain: 'siskawit.firebaseapp.com',
-  databaseURL: 'https://siskawit.firebaseio.com',
-  projectId: 'siskawit',
-  storageBucket: 'siskawit.appspot.com',
-  messagingSenderId: '1085252310862'
+  apiKey: "AIzaSyCYjSBD60dymIdn5Z-SsXyA_Rs36bk4sMQ",
+  authDomain: "siskawit-a82be.firebaseapp.com",
+  databaseURL: "https://siskawit-a82be.firebaseio.com",
+  projectId: "siskawit-a82be",
+  storageBucket: "siskawit-a82be.appspot.com",
+  messagingSenderId: "1081650455890",
+  appId: "1:1081650455890:web:b4c868287f9acf36"
 };
 
 firebase.initializeApp(config);
