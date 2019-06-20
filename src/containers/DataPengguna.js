@@ -58,14 +58,17 @@ class DataPengguna extends Container {
       .once('value')
       .catch({ loading: false });
 
-    const { alamat, nomorTelepon, nama } = user.val();
+    if (user.val()) {
+      const { alamat, nomorTelepon, nama } = user.val();
 
-    this.setState({
-      loading: false,
-      nama,
-      nomorTelepon,
-      alamat
-    });
+      this.setState({
+        nama,
+        nomorTelepon,
+        alamat
+      });
+    }
+
+    this.setState({ loading: false });
   };
 
   updateAkun = async data => {
