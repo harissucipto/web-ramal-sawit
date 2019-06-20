@@ -13,6 +13,25 @@ import DataPeramalan from './DataPeramalan';
 import DataPengguna from './DataPengguna';
 
 class ProsesData extends Component {
+  state = {
+    pilihan: 'Semua',
+    bulan: [
+      'Semua',
+      'Januari',
+      'Februari',
+      'Maret',
+      'April',
+      'Mei',
+      'Juni',
+      'Juli',
+      'Agustus',
+      'September',
+      'Oktober',
+      'November',
+      'Desember'
+    ]
+  };
+
   componentWillMount() {
     // jika ada data lakukan analisa
     if (this.props.state.data.length) {
@@ -33,7 +52,27 @@ class ProsesData extends Component {
           <Col xs="12">
             <Card style={{ borderColor: 'green', borderWidth: '4px' }}>
               <Card.Body>
-                <CetakLaporan data={data} model={model} r2={r2} />
+                <div>
+                  <p>Pilih Data Yang Dicetak:</p>
+                  <select
+                    value={this.state.pilihan}
+                    onChange={event =>
+                      this.setState({ pilihan: event.target.value })
+                    }
+                  >
+                    {this.state.bulan.map(item => (
+                      <option key={item} value={item}>
+                        {item}
+                      </option>
+                    ))}
+                  </select>
+                </div>
+                <CetakLaporan
+                  data={data}
+                  model={model}
+                  r2={r2}
+                  pilihan={this.state.pilihan}
+                />
               </Card.Body>
             </Card>
           </Col>

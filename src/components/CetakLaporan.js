@@ -3,22 +3,23 @@ import ReactToPrint from 'react-to-print';
 import Button from 'react-bootstrap/Button';
 import math from 'mathjs';
 
-import TableDataPerkebunanAnalisa from './TableDataPerkebunanAnalisa';
+import TableDataCetak from './TableDataCetak';
 import * as Nama from '../constants/namaData';
 
 class ComponentToPrint extends Component {
   render() {
-    const { data, model, r2 } = this.props;
+    const { data, model, r2, pilihan } = this.props;
     return (
       <div style={{ margin: '3rem' }}>
         <h4 className="text-center mb-5">
-          Laporan Sistem Peramalan Kelapa Sawit <br /> Perkebunan PT. Perkebunan
-          Nusantara V{' '}
+          Laporan Sistem Peramalan Kelapa Sawit {pilihan} <br /> Perkebunan PT.
+          Perkebunan Nusantara V{' '}
         </h4>
-        <TableDataPerkebunanAnalisa
+        <TableDataCetak
           ref={el => (this.componentRef = el)}
           data={data}
           model={model}
+          pilihan={pilihan}
         />
         <div className="mt-4 mb-2">Keterangan:</div>
         <ul>
@@ -42,7 +43,7 @@ class ComponentToPrint extends Component {
 
 class CetakLaporan extends Component {
   render() {
-    const { data, model, r2 } = this.props;
+    const { data, model, r2, pilihan } = this.props;
     if (!data.length) return <p className="mt-lg-5">Belum Ada Data</p>;
     return (
       <div>
@@ -68,6 +69,7 @@ class CetakLaporan extends Component {
           data={data}
           model={model}
           r2={r2}
+          pilihan={pilihan}
         />
         ;
       </div>
