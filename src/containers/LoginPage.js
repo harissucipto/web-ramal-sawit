@@ -50,7 +50,7 @@ class ProsesData extends Component {
                   className="d-inline-block align-top mb-2 mt-3"
                   alt="React Bootstrap logo"
                 />
-                <h5>SISKAWIT</h5>
+                <h5>Sistem Peramalan Kelapa Sawit</h5>
               </div>
 
               <hr />
