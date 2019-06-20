@@ -23,7 +23,7 @@ export default class LatihPage extends Component {
             <Card style={{ borderColor: 'green', borderWidth: '4px' }}>
               <Card.Img variant="top" src={latih} />
               <Card.Body>
-                <Card.Title>Latih Model Peramalan</Card.Title>
+                <Card.Title>Input Data Peramalan</Card.Title>
                 <Card.Text className="text-justify">
                   <span style={{ display: 'block', marginBottom: '5px' }}>
                     Masukkan data anda untuk melatih sistem dalam melakukan

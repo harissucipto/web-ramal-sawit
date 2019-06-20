@@ -53,13 +53,13 @@ const Header = ({ location, history, logout }) => {
                         active={pathname === ROUTES.LATIH}
                         onClick={() => history.push(ROUTES.LATIH)}
                       >
-                        <h5>Latih Model</h5>
+                        <h5>Input Data</h5>
                       </Nav.Link>
                       <Nav.Link
                         active={pathname === ROUTES.ANALISA}
                         onClick={() => history.push(ROUTES.ANALISA)}
                       >
-                        <h5>Analisa Model</h5>
+                        <h5>Analisa Data</h5>
                       </Nav.Link>
                       <Nav.Link
                         active={pathname === ROUTES.PERAMALAN}

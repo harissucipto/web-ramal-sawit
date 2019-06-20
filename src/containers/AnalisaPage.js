@@ -41,7 +41,7 @@ class ProsesData extends Component {
             <Card style={{ borderColor: 'green', borderWidth: '4px' }}>
               <Card.Img variant="top" src={analisa} />
               <Card.Body>
-                <Card.Title>Analisa Model Data Peramalan</Card.Title>
+                <Card.Title>Analisa Data Peramalan</Card.Title>
                 <Card.Text className="text-justify">
                   <span style={{ display: 'block', marginBottom: '5px' }}>
                     Halaman ini memuat model Data Peramalan yang telah dibuat
