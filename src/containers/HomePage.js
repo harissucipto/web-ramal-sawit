@@ -43,20 +43,20 @@ class ProsesData extends Component {
         <Row className="mt-5">
           <Col xs="12" md="6" lg="3">
             <MenuItem
-              title={'1. Latih Model Data'}
-              desc={'Latih Model Data Agar Aplikasi Dapat Melakukan Peramalan.'}
-              btn={'Latih Model!'}
+              title={'1. Input Data Data'}
+              desc={'Input Data Agar Aplikasi Dapat Melakukan Peramalan.'}
+              btn={'Input Data!'}
               pathname={ROUTES.LATIH}
               img={latih}
             />
           </Col>
           <Col xs="12" md="6" lg="3">
             <MenuItem
-              title={'2. Analisa Model Data'}
+              title={'2. Analisa Data'}
               desc={
-                'Lihat Model Data yang Telah Di buat Aplikasi Berdasarkan Data yang telah dilatih.'
+                'Lihat Analisa Data yang Telah Di buat Aplikasi Berdasarkan Data yang telah diinput.'
               }
-              btn={'Liat Model Data!'}
+              btn={'Lihat Analisa Data!'}
               pathname={ROUTES.ANALISA}
               img={analisa}
             />
@@ -76,7 +76,7 @@ class ProsesData extends Component {
               title={'About'}
               desc="
               Lihat Halaman Deskripsi Penjelasan Tentang Kenapa Dibuatnya Aplikasi ini"
-              btn={'Liat Petunjuk'}
+              btn={'Lihat Petunjuk'}
               pathname={ROUTES.ABOUT}
               img={doc}
             />
