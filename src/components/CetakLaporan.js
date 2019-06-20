@@ -12,7 +12,8 @@ class ComponentToPrint extends Component {
     return (
       <div style={{ margin: '3rem' }}>
         <h4 className="text-center mb-5">
-          Laporan Sistem Peramalan Kelapa Sawit {pilihan} <br /> Perkebunan PT.
+          Laporan Sistem Peramalan Kelapa Sawit{' '}
+          {pilihan !== 'Semua' && `Bulan ${pilihan}`} <br /> Perkebunan PT.
           Perkebunan Nusantara V{' '}
         </h4>
         <TableDataCetak
