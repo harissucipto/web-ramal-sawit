@@ -1,21 +1,25 @@
-import { Container } from 'unstated';
-import moment from 'moment';
-import math from 'mathjs';
-import _ from 'lodash';
+// kita butuh plugin dari luar
+import { Container } from 'unstated'; // state management library
+import moment from 'moment'; // librarary jam
+import math from 'mathjs'; // regresi linear berganda
+import _ from 'lodash'; // guananya
 
+// plugin lokal
 import { totalArr, arrPangkatDua, arrKaliArr } from '../utils/hitung';
 import { database } from '../data/config';
 
 const Penyimpanan = database.ref().child('dataPerkebunan');
 
 class DataPeramalan extends Container {
+  // data  penyimpanan web
   state = {
-    data: [],
+    data: [], // data perkebenunan
     loading: false,
     model: null,
     r2: null
   };
 
+  // ngambil data server firebase
   fetch = async () => {
     this.setState({ loading: true });
     const tempData = await Penyimpanan.once('value').catch({ loading: false });
